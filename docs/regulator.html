@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organismo regulador</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Organismo regulador</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Validacion externa</h3>
+    <span class="step-pill active"><strong>1. Solicitud</strong>Alta de escribano</span>
+    <span class="step-pill"><strong>2. Control</strong>Matricula y certificado</span>
+    <span class="step-pill"><strong>3. Decision</strong>Habilitar o rechazar</span>
+    <span class="step-pill"><strong>4. Evidencia</strong>Evento firmado/auditable</span>
+  </aside>
+
+  <section class="content">
+    <div class="access-gate" data-access-gate="regulator">
+      <h2>Acceso seguro del organismo regulador</h2>
+      <p>Credencial demo: usuario <code>regulador.demo</code>, clave <code>demo123</code>. Por seguridad, al salir de este espacio se exige nueva validacion.</p>
+      <div class="form-grid">
+        <div>
+          <label>Usuario regulador</label>
+          <input data-auth-user value="regulador.demo">
+        </div>
+        <div>
+          <label>Clave</label>
+          <input data-auth-pass type="password" value="demo123" autocomplete="off">
+        </div>
+        <div class="biometric-panel">
+          <span class="fingerprint-demo" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <path d="M12 25c0-7.2 5.3-12.5 12-12.5S36 17.8 36 25" />
+              <path d="M17 25c0-4.4 3-7.5 7-7.5s7 3.1 7 7.5" />
+              <path d="M22 25c0-1.7.8-2.8 2-2.8s2 1.1 2 2.8c0 7-2.2 11.8-6.5 15" />
+              <path d="M27.8 30.5c-.8 4.1-2.3 7.6-4.8 10.8" />
+              <path d="M31.5 27.5c-.1 5.9-1.9 11.1-5.2 15.4" />
+              <path d="M14.5 31c1.1-1.7 1.7-3.8 1.7-6" />
+              <path d="M10.5 32.8c1.1-1.4 1.8-3 2.1-4.8" />
+              <path d="M35.4 31.2c-.6 4-1.8 7.5-3.9 10.8" />
+              <path d="M9.5 22.5c.9-8.2 7-14 14.5-14s13.6 5.8 14.5 14" />
+            </svg>
+          </span>
+          <label><input data-auth-biometric type="checkbox"> Validar biometria demo</label>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button type="button" data-auth-button>Ingresar al organismo</button>
+      </div>
+    </div>
+
+    <div data-secure-area>
+    <div class="page-title">
+      <div>
+        <h1>Interfaz del organismo regulador</h1>
+        <p>Espacio separado para validar escribanos. En produccion se integraria con colegio, autoridad de registro, padron profesional o servicio regulatorio.</p>
+        <p><strong>Modo operativo:</strong> <span class="badge-neutral" data-mode></span></p>
+        <p><strong>Acceso:</strong> <span class="badge-ok" data-auth-stamp>Sesion no validada</span></p>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Controles de habilitacion</h2>
+        <div class="evidence-list">
+          <div><strong>Autenticacion del organismo:</strong> acceso con rol regulador y doble factor.</div>
+          <div><strong>Validacion profesional:</strong> matricula, jurisdiccion, colegio y estado disciplinario.</div>
+          <div><strong>Certificado digital:</strong> vigencia, cadena X.509 y revocacion OCSP/CRL.</div>
+          <div><strong>Evidencia:</strong> decision con identificador, hash y registro inmutable.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Regla operativa</h2>
+        <p>El escribano no queda habilitado por cargarse a si mismo. Hasta que el organismo apruebe, sus actuaciones quedan bloqueadas o marcadas como pendientes.</p>
+        <p><span class="badge-pending">Separacion de funciones</span></p>
+        <p><span class="badge-ok">Decision auditable</span></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Solicitudes de escribanos</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Escribano</th>
+            <th>Matricula</th>
+            <th>Colegio</th>
+            <th>Jurisdiccion</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+            <th>Decision</th>
+          </tr>
+        </thead>
+        <tbody id="regulatorNotaryList"></tbody>
+      </table>
+    </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

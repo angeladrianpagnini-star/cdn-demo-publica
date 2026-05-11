@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo tramite</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="document_list.html">Tramites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="upload.html">Nuevo tramite</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Flujo certificado</h3>
+    <span class="step-pill active"><strong>1. Alta</strong>Documento e intervinientes</span>
+    <span class="step-pill"><strong>2. Integridad</strong>Hash SHA-256</span>
+    <span class="step-pill"><strong>3. Revision</strong>Control del acto</span>
+    <span class="step-pill"><strong>4. Firma</strong>Firmante y escribano</span>
+    <span class="step-pill"><strong>5. Evidencia</strong>Certificado exportable</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Alta de tramite notarial</h1>
+        <p>Registro inicial del expediente digital. Los datos ingresados se conservan en esta demo y se reflejan en todo el flujo.</p>
+        <p><strong>Modo operativo:</strong> <span class="badge-neutral" data-mode></span></p>
+      </div>
+    </div>
+
+    <div class="card" data-case-form>
+      <div class="form-grid">
+        <div>
+          <label>Tipo de acto</label>
+          <select id="actType">
+            <option>Poder general de administracion</option>
+            <option>Certificacion de firma</option>
+            <option>Autorizacion societaria</option>
+          </select>
+        </div>
+        <div>
+          <label>Jurisdiccion piloto</label>
+          <select id="jurisdiction">
+            <option>Ciudad Autonoma de Buenos Aires</option>
+            <option>Provincia de Buenos Aires</option>
+            <option>Cordoba</option>
+            <option>Santa Fe</option>
+            <option>Mendoza</option>
+          </select>
+        </div>
+        <div>
+          <label>Firmante</label>
+          <input id="signerName" value="Juan Perez">
+        </div>
+        <div>
+          <label>Documento de identidad</label>
+          <input id="signerId" value="DNI 24.567.890">
+        </div>
+        <div>
+          <label>Usuario que solicita el tramite</label>
+          <input id="requestorName" value="Usuario solicitante">
+        </div>
+        <div>
+          <label>Escribano operador</label>
+          <select id="notaryId"></select>
+        </div>
+        <div>
+          <label>Modalidad</label>
+          <select id="modality">
+            <option>Remota con videoconferencia y validacion biometrica</option>
+            <option>Presencial con token criptografico</option>
+            <option>Mixta</option>
+          </select>
+        </div>
+        <div>
+          <label>Documento PDF</label>
+          <input type="file">
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <h2>Validacion del escribano seleccionado</h2>
+        <div class="grid three">
+          <div class="evidence-list">
+            <div><strong>Escribano:</strong> <span data-preview="notaryName"></span></div>
+          </div>
+          <div class="evidence-list">
+            <div><strong>Matricula:</strong> <span data-preview="notaryMatricula"></span></div>
+          </div>
+          <div class="evidence-list">
+            <div><strong>Estado:</strong> <span data-preview="notaryStatus"></span></div>
+          </div>
+        </div>
+        <p style="margin-top: 12px;"><strong>Organismo / colegio:</strong> <span data-preview="notaryColegio"></span></p>
+        <p><strong>Autenticacion regulatoria:</strong> <span data-preview="notaryRegulator"></span></p>
+        <div class="toolbar">
+          <a class="btn btn-secondary" href="notaries.html">Agregar o administrar escribanos</a>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <a class="btn" href="hash_validation.html" onclick="saveCaseAndGo('hash_validation.html'); return false;">Generar hash y continuar</a>
+        <a class="btn btn-secondary" href="dashboard.html" onclick="saveCaseAndGo('dashboard.html'); return false;">Guardar borrador</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Controles de seguridad desde el alta</h2>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Comunicaciones:</strong> toda carga debe viajar por canal cifrado TLS.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Resguardo:</strong> el documento se conserva cifrado desde su ingreso.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Ciclo de vida:</strong> se define retencion, auditoria y verificacion futura.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

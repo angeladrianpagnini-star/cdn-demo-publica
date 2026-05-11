@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento deportivo generado</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="sports_parties.html">Partes</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Documento</h3>
+    <span class="step-pill"><strong>1. Agente FIFA</strong>Validado</span>
+    <span class="step-pill"><strong>2. Contrato</strong>Seleccionado</span>
+    <span class="step-pill"><strong>3. Clausulas</strong>Configuradas</span>
+    <span class="step-pill"><strong>4. Partes</strong>Firmas previas</span>
+    <span class="step-pill active"><strong>5. Documento</strong>Generacion</span>
+    <span class="step-pill"><strong>6. Federacion</strong>Control normativo</span>
+    <span class="step-pill"><strong>7. Escribano</strong>Certificacion</span>
+    <span class="step-pill"><strong>8. Archivo</strong>Registro y QR</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Documento contractual generado</h1>
+        <p>Vista de trabajo del instrumento antes de enviarlo a validacion federativa y actuacion notarial.</p>
+      </div>
+      <button type="button" onclick="sportsAction('sports.document.generated', 'Documento generado - en espera de validacion federativa', 'sports_federation_review.html')">Enviar a comprobación federativa</button>
+    </div>
+
+    <div class="grid two">
+      <div class="card document-sheet">
+        <h2>Contrato deportivo federado</h2>
+        <p><strong>Expediente:</strong> <span data-sports="sportsExpediente"></span></p>
+        <p><strong>Estado:</strong> <span data-sports="sportsStatus"></span></p>
+        <p><strong>Agente:</strong> <span data-sports="sportsAgentName"></span> - <span data-sports="sportsAgentLicense"></span></p>
+        <p><strong>Modalidad:</strong> <span data-sports="sportsPreparationMode"></span></p>
+        <p><strong>Documento cargado:</strong> <span data-sports="sportsUploadedDocumentName"></span></p>
+        <p><strong>Alcance de revisión:</strong> <span data-sports="sportsReviewScope"></span></p>
+        <p><strong>Tipo:</strong> <span data-sports="sportsContractType"></span></p>
+        <p><strong>Cliente:</strong> <span data-sports="sportsClientType"></span></p>
+        <p><strong>Objeto:</strong> <span data-sports="sportsObject"></span></p>
+        <p><strong>Duración:</strong> <span data-sports="sportsDurationOption"></span>. <span data-sports="sportsDuration"></span></p>
+        <p><strong>Prórroga:</strong> <span data-sports="sportsRenewal"></span></p>
+        <p><strong>Honorarios:</strong> <span data-sports="sportsFeeOption"></span> - <span data-sports="sportsFeePercent"></span>. <span data-sports="sportsFeeDetail"></span></p>
+        <p><strong>Alcance:</strong> <span data-sports="sportsTerritory"></span> - <span data-sports="sportsExclusivity"></span></p>
+        <p><strong>Cláusulas particulares:</strong> <span data-sports="sportsParticularClauses"></span></p>
+        <p><strong>Hash preliminar:</strong> <code data-sports="sportsDocumentHash"></code></p>
+      </div>
+
+      <div class="card">
+        <h2>Controles antes de celebracion</h2>
+        <div class="evidence-list">
+          <div><strong>Partes:</strong> deben completar firma digital o conformidad previa.</div>
+          <div><strong>Documento cargado:</strong> si existe contrato confeccionado, se valida contra requisitos mínimos y se conserva como evidencia original.</div>
+          <div><strong>Regla FIFA/federacion:</strong> control de tipo contractual, honorarios, plazo y conflictos.</div>
+          <div><strong>Escribano:</strong> certifica identidad, voluntad, documento y paquete de evidencia.</div>
+          <div><strong>Repositorio:</strong> archiva contrato final, QR, hash y derivacion a area legal AFA si aplica.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tablero de seguimiento</h2>
+      <div class="status-board" id="sportsStatusBoard"></div>
+    </div>
+
+    <div class="card">
+      <h2>Partes y firmas del documento</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Parte</th>
+              <th>Rol</th>
+              <th>Validacion</th>
+              <th>Firma</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody id="sportsPartiesList"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

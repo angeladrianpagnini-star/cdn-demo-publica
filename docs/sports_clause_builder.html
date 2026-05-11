@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constructor de clausulas deportivas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Clausulas</h3>
+    <span class="step-pill"><strong>1. Agente FIFA</strong>Validado</span>
+    <span class="step-pill"><strong>2. Contrato</strong>Seleccionado</span>
+    <span class="step-pill active"><strong>3. Clausulas</strong>Condiciones</span>
+    <span class="step-pill"><strong>4. Partes</strong>Firmas previas</span>
+    <span class="step-pill"><strong>5. Federacion</strong>Validacion</span>
+    <span class="step-pill"><strong>6. Escribano</strong>Certificacion</span>
+    <span class="step-pill"><strong>7. Archivo</strong>Registro federado</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Constructor de clausulas y condiciones particulares</h1>
+        <p>Configuracion guiada para adaptar contratos deportivos sin perder controles normativos, federativos y notariales.</p>
+      </div>
+      <button type="button" onclick="saveSportsClausesAndGo('sports_parties.html')">Continuar a partes</button>
+    </div>
+
+    <div class="card">
+      <h2>Modalidad de preparación del documento</h2>
+      <div class="form-grid">
+        <div>
+          <label>Opción de trabajo</label>
+          <select id="sportsPreparationMode">
+            <option>Construccion asistida por la plataforma</option>
+            <option>Cargar contrato ya confeccionado</option>
+            <option>Revision mixta: documento cargado + clausulas asistidas</option>
+          </select>
+        </div>
+        <div>
+          <label>Documento confeccionado</label>
+          <input id="sportsUploadedDocument" type="file" accept=".pdf,.doc,.docx">
+        </div>
+        <div>
+          <label>Nombre del documento cargado</label>
+          <input id="sportsUploadedDocumentName" value="Sin documento cargado">
+        </div>
+        <div>
+          <label>Alcance de revisión</label>
+          <select id="sportsReviewScope">
+            <option>Revision contractual, validacion federativa, firma, certificacion y archivo</option>
+            <option>Solo validacion federativa y custodia</option>
+            <option>Solo certificacion notarial y archivo</option>
+            <option>Revision legal previa + construccion asistida</option>
+          </select>
+        </div>
+      </div>
+      <p class="muted">La opción de carga permite tomar un contrato ya redactado y pasarlo por controles de identidad, representación, firmas, evidencia, hash, certificación y archivo.</p>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Datos esenciales</h2>
+        <div class="form-grid">
+          <div>
+            <label>Tipo de contrato</label>
+            <select id="sportsContractType">
+              <option>Representacion individual de jugador</option>
+              <option>Representacion de entrenador / director tecnico</option>
+              <option>Representacion de club</option>
+              <option>Acuerdo con sponsor</option>
+              <option>Servicios profesionales deportivos</option>
+            </select>
+          </div>
+          <div>
+            <label>Cliente representado</label>
+            <select id="sportsClientType">
+              <option>Jugador</option>
+              <option>Entrenador / director tecnico</option>
+              <option>Club</option>
+              <option>Sponsor</option>
+              <option>Profesional deportivo especializado</option>
+            </select>
+          </div>
+          <div>
+            <label>Duración</label>
+            <select id="sportsDurationOption">
+              <option>6 meses - operación puntual o mandato acotado</option>
+              <option>12 meses - representación por temporada o ventana contractual</option>
+              <option>24 meses - plazo máximo orientativo si aplica</option>
+              <option>Duración por evento / transacción específica</option>
+              <option>Otra duración sujeta a revisión legal y federativa</option>
+            </select>
+          </div>
+          <div>
+            <label>Detalle de duración</label>
+            <input id="sportsDuration" value="24 meses maximo si aplica a jugador/entrenador">
+          </div>
+          <div>
+            <label>Honorarios / fee</label>
+            <select id="sportsFeeOption">
+              <option>Porcentaje sobre remuneracion bruta del jugador/entrenador</option>
+              <option>Porcentaje sobre compensacion de transferencia</option>
+              <option>Monto fijo por servicios autorizados</option>
+              <option>Sin honorario a cargo del jugador</option>
+              <option>Otro sujeto a revision federativa</option>
+            </select>
+          </div>
+          <div>
+            <label>Valor cuantitativo</label>
+            <select id="sportsFeePercent">
+              <option>5%</option>
+              <option>10%</option>
+              <option>15%</option>
+              <option>20%</option>
+              <option>Monto fijo a detallar</option>
+              <option>Otro valor sujeto a control legal</option>
+            </select>
+          </div>
+          <div>
+            <label>Detalle del fee</label>
+            <input id="sportsFeeDetail" value="Sujeto a limites y control normativo vigente">
+          </div>
+          <div>
+            <label>Alcance geografico</label>
+            <input id="sportsTerritory" value="Argentina / internacional">
+          </div>
+          <div>
+            <label>Exclusividad</label>
+            <select id="sportsExclusivity">
+              <option>No exclusiva</option>
+              <option>Exclusiva por transaccion</option>
+              <option>Exclusiva por territorio</option>
+              <option>Representacion compartida</option>
+              <option>Representacion colectiva</option>
+            </select>
+          </div>
+          <div class="full-span">
+            <label>Prórroga y continuidad</label>
+            <textarea id="sportsRenewal" rows="3">Prorroga sujeta a nueva aceptacion expresa, control federativo y constancia de consentimiento de las partes.</textarea>
+          </div>
+          <div class="full-span">
+            <label>Objeto operativo del contrato</label>
+            <textarea id="sportsObject" rows="3">Negociacion, comunicacion preparatoria y cierre de transaccion deportiva.</textarea>
+          </div>
+          <div class="full-span">
+            <label>Cláusulas particulares: derechos, obligaciones y condiciones</label>
+            <textarea id="sportsParticularClauses" rows="6">Derechos y obligaciones de las partes, reportes de gestión, confidencialidad, protección de datos, autorizaciones, causales de rescisión, distribución de honorarios si hay representación compartida y condiciones especiales del acuerdo.</textarea>
+          </div>
+        </div>
+        <p class="muted">Opciones orientativas del MVP: en produccion se parametrizan contra normativa FIFA/federacion vigente y revision legal aplicable.</p>
+      </div>
+
+      <div class="card">
+        <h2>Clausulas particulares</h2>
+        <div class="evidence-list">
+          <div><strong>Objeto:</strong> negociacion, comunicacion preparatoria y cierre de transaccion deportiva.</div>
+          <div><strong>Representación compartida:</strong> admite más de un agente, asesor o parte operativa, con roles y porcentajes diferenciados.</div>
+          <div><strong>Representación colectiva:</strong> contempla grupos de profesionales, cuerpo técnico, staff o acuerdos con varios integrantes.</div>
+          <div><strong>Asesoria legal independiente:</strong> constancia de ofrecimiento/aceptacion o renuncia informada.</div>
+          <div><strong>Confidencialidad:</strong> resguardo de datos personales, medicos, economicos y deportivos.</div>
+          <div><strong>Conflicto de intereses:</strong> control de multiple representacion y partes involucradas.</div>
+          <div><strong>Rescission:</strong> causales, preaviso, efectos y preservacion de evidencia.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Seguimiento del expediente</h2>
+      <div class="status-board" id="sportsStatusBoard"></div>
+    </div>
+
+    <div class="card">
+      <h2>Checklist previo a federacion y escribano</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Control</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Identidad y licencia del agente FIFA</td>
+            <td><span class="badge-ok">Verificable</span></td>
+            <td>Consulta federativa / registro FIFA</td>
+          </tr>
+          <tr>
+            <td>Partes, duracion, honorarios, servicios y firmas</td>
+            <td><span class="badge-ok">Parametros completos</span></td>
+            <td>Formulario contractual</td>
+          </tr>
+          <tr>
+            <td>Contrato de representacion: identidad, duracion, honorarios, servicios y firmas</td>
+            <td><span class="badge-ok">Control minimo incorporado</span></td>
+            <td>Parametros FIFA / documento cargado</td>
+          </tr>
+          <tr>
+            <td>Cliente menor de edad, entrenador, club o representacion multiple</td>
+            <td><span class="badge-pending">Requiere alerta y validacion reforzada</span></td>
+            <td>Reglas especiales / evidencia adicional</td>
+          </tr>
+          <tr>
+            <td>Reglas aplicables al tipo de cliente</td>
+            <td><span class="badge-pending">Pendiente validacion federativa</span></td>
+            <td>AFA / federacion miembro</td>
+          </tr>
+          <tr>
+            <td>Actuacion notarial</td>
+            <td><span class="badge-pending">Pendiente</span></td>
+            <td>Firma digital notarial y custodia</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>

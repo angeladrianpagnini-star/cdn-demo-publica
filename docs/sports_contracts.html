@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contratos deportivos federados</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Repositorio federado</h3>
+    <a href="sports_contracts.html">Contratos deportivos</a>
+    <a href="regulator.html">Validacion federativa</a>
+    <a href="notary_workspace.html">Actuacion notarial</a>
+    <a href="audit_trail.html">Custodia y evidencia</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Contratos deportivos federados</h1>
+        <p>Modelo piloto para contratos comerciales deportivos entre jugadores, clubes, sponsors y agentes FIFA, con validación federativa y actuación notarial certificada.</p>
+        <p><strong>Alcance piloto:</strong> <span class="badge-neutral">AFA Argentina</span> <span class="badge-neutral">Escalable a FIFA / federaciones miembro</span></p>
+      </div>
+      <a class="btn" href="agent_auth.html">Iniciar contrato</a>
+    </div>
+
+    <div class="card sports-hero">
+      <div>
+        <span class="badge-neutral">Piloto legal deportivo</span>
+        <h2>Contratos, herramientas y custodia para la gestión profesional del fútbol</h2>
+        <p>Un espacio de trabajo para agentes, clubes, jugadores, asesores y federaciones: construir contratos, cargar documentos, validar reglas, certificar firmas y conservar evidencia auditable.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="agent_auth.html">Crear expediente</a>
+        <a class="btn btn-secondary" href="sports_clause_builder.html">Ver constructor</a>
+      </div>
+    </div>
+
+    <div class="grid three">
+      <div class="card metric">
+        <strong>AFA</strong>
+        <span>Validación federativa local para agente, club, jugador y sponsor.</span>
+      </div>
+      <div class="card metric">
+        <strong>FIFA</strong>
+        <span>Modelo escalable a federaciones integradas bajo reglas comunes.</span>
+      </div>
+      <div class="card metric">
+        <strong>Legal</strong>
+        <span>Repositorio legal auditable con evidencia verificable en el tiempo.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Estado actual del expediente deportivo</h2>
+      <p>Las partes pueden consultar este tablero para saber dónde está el trámite y qué rol debe actuar a continuación.</p>
+      <div class="status-board" id="sportsStatusBoard"></div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Dos formas de operar</h2>
+        <div class="evidence-list">
+          <div><strong>Cargar documento:</strong> contrato PDF/DOC ya confeccionado para validarlo, firmarlo, certificarlo, hashearlo y archivarlo.</div>
+          <div><strong>Construcción asistida:</strong> formulario guiado con tipo de contrato, partes, honorarios, duración, prórroga, cláusulas y controles federativos.</div>
+          <div><strong>Revisión mixta:</strong> documento cargado más cláusulas particulares y alertas legales configuradas desde la plataforma.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Repositorio especial de contratos</h2>
+        <div class="evidence-list">
+          <div><strong>Contrato:</strong> representación deportiva / sponsor / transferencia / derechos comerciales.</div>
+          <div><strong>Partes:</strong> jugador, club, sponsor, agente FIFA y escribano certificante.</div>
+          <div><strong>Custodia:</strong> documento cifrado, hash, sello temporal y registro de accesos.</div>
+          <div><strong>Auditoría:</strong> trazabilidad completa para federación, partes autorizadas y órganos de control.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Validacion federativa</h2>
+        <div class="evidence-list">
+          <div><strong>Agente:</strong> licencia FIFA vigente, identidad y ausencia de bloqueo regulatorio.</div>
+          <div><strong>Club:</strong> afiliación y facultades del representante firmante.</div>
+          <div><strong>Jugador:</strong> identidad, consentimiento y capacidad de contratar.</div>
+          <div><strong>Normativa:</strong> control de requisitos vigentes aplicables al tipo de contrato.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid three">
+      <div class="card feature-card">
+        <span>Herramienta</span>
+        <h2>Constructor contractual</h2>
+        <p>Cláusulas, honorarios, duración, partes y alertas jurídicas en un circuito guiado.</p>
+      </div>
+      <div class="card feature-card">
+        <span>Documento</span>
+        <h2>Carga y revisión</h2>
+        <p>Contrato ya redactado, validación de mínimos, firma y custodia probatoria.</p>
+      </div>
+      <div class="card feature-card">
+        <span>Repositorio</span>
+        <h2>Archivo federado</h2>
+        <p>Hash, QR, sello temporal, trazabilidad y consulta por partes autorizadas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Flujo piloto AFA / FIFA</h2>
+      <ul class="timeline">
+        <li><strong>1. Solicitud del contrato</strong> El agente, club o sponsor inicia el expediente deportivo federado.</li>
+        <li><strong>2. Validacion del agente FIFA</strong> Se consulta licencia, identidad, estado y federacion asociada.</li>
+        <li><strong>3. Validacion federativa local</strong> AFA o federacion correspondiente aprueba la autenticidad operacional del expediente.</li>
+        <li><strong>4. Firma de partes</strong> Jugador, club, sponsor y agente firman bajo controles de identidad y consentimiento.</li>
+        <li><strong>5. Firma de partes intervinientes</strong> Agente, jugador, club, sponsor o profesional deportivo aceptan y firman antes de la celebracion definitiva.</li>
+        <li><strong>6. Actuacion notarial</strong> El escribano certifica el acto, agrega peso juridico y registra su intervencion.</li>
+        <li><strong>7. Repositorio federado</strong> La federacion conserva registro, hash, certificado, evidencia y trazabilidad.</li>
+        <li><strong>8. Derivacion competente</strong> Si existen observaciones, se deriva a area legal de AFA/federacion u organismo competente.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Contrato ejemplo</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Expediente</th>
+            <th>Tipo</th>
+            <th>Agente</th>
+            <th>Federacion</th>
+            <th>Estado</th>
+            <th>Custodia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CDN-DEP-2026-0001</td>
+            <td>Contrato de representacion jugador-agente</td>
+            <td>Agente FIFA validado</td>
+            <td>AFA / FIFA</td>
+            <td><span class="badge-pending">Pendiente actuacion notarial</span></td>
+            <td><span class="badge-ok">Repositorio federado cifrado</span></td>
+          </tr>
+          <tr>
+            <td>CDN-DEP-2026-0002</td>
+            <td>Acuerdo comercial con sponsor</td>
+            <td>Agente FIFA validado</td>
+            <td>AFA</td>
+            <td><span class="badge-neutral">Borrador federativo</span></td>
+            <td><span class="badge-pending">Pendiente hash</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>

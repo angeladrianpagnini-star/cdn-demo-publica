@@ -4,6 +4,14 @@ Demo conceptual de una plataforma de certificacion digital notarial orientada a 
 
 El objetivo de esta version publica es mostrar el alcance visual y funcional del piloto sin exponer documentacion estrategica interna, roadmap de producto, analisis de proteccion intelectual ni materiales sensibles de validacion institucional.
 
+## Demo online
+
+La version publica navegable se publica con GitHub Pages:
+
+```text
+https://angeladrianpagnini-star.github.io/cdn-demo-publica/
+```
+
 ## Que muestra la demo
 
 - Portada institucional clickeable.
