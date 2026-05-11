@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validacion federativa deportiva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Federacion</h3>
+    <span class="step-pill"><strong>1. Agente FIFA</strong>Validado</span>
+    <span class="step-pill"><strong>2. Contrato</strong>Seleccionado</span>
+    <span class="step-pill"><strong>3. Clausulas</strong>Condiciones</span>
+    <span class="step-pill"><strong>4. Partes</strong>Firmas previas</span>
+    <span class="step-pill active"><strong>5. Federacion</strong>Control AFA/FIFA</span>
+    <span class="step-pill"><strong>6. Escribano</strong>Certificacion</span>
+    <span class="step-pill"><strong>7. Archivo</strong>Registro federado</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Validacion federativa del contrato</h1>
+        <p>Control normativo por organismo competente antes de la celebracion definitiva y actuacion notarial.</p>
+      </div>
+      <button type="button" onclick="sportsAction('sports.federation.approved', 'Validado por federacion - en espera de mesa del escribano', null)">Aprobar y dejar en espera</button>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Organismo competente</h2>
+        <div class="evidence-list">
+          <div><strong>Expediente:</strong> <span data-sports="sportsExpediente"></span></div>
+          <div><strong>Agente:</strong> <span data-sports="sportsAgentName"></span> - <span data-sports="sportsAgentFederation"></span></div>
+          <div><strong>Contrato:</strong> <span data-sports="sportsContractType"></span></div>
+          <div><strong>Estado actual:</strong> <span data-sports="sportsStatus"></span></div>
+          <div><strong>Piloto Argentina:</strong> AFA como repositorio/validador conceptual local.</div>
+          <div><strong>Escala internacional:</strong> FIFA y federaciones miembro integradas.</div>
+          <div><strong>Resultado:</strong> aprobado, observado, rechazado o derivado a area legal.</div>
+          <div><strong>Evidencia:</strong> respuesta federativa con fecha, operador, hash y motivo.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Controles aplicables</h2>
+        <p><span class="badge-ok">Agente FIFA identificable</span></p>
+        <p><span class="badge-ok">Firmas de partes visibles en el documento</span></p>
+        <p><span class="badge-ok">Contrato parametrizado</span></p>
+        <p><span class="badge-pending">Revision legal/federativa pendiente</span></p>
+        <div class="toolbar">
+          <button type="button" class="btn-secondary" onclick="sportsAction('sports.federation.legal_review', 'Derivado a area legal AFA / federacion competente', 'sports_archive.html')">Derivar a area legal</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tablero de avance del expediente</h2>
+      <div class="status-board" id="sportsStatusBoard"></div>
+    </div>
+
+    <div class="card">
+      <h2>Derivaciones posibles</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Condicion</th>
+            <th>Destino</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Contrato conforme y partes firmadas</td>
+            <td>Mesa del escribano</td>
+            <td>Actuacion notarial definitiva</td>
+          </tr>
+          <tr>
+            <td>Observacion normativa o conflicto</td>
+            <td>Area legal AFA / federacion competente</td>
+            <td>Revision, subsanacion o rechazo fundado</td>
+          </tr>
+          <tr>
+            <td>Contrato certificado</td>
+            <td>Archivo federado</td>
+            <td>Registro, custodia y trazabilidad futura</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>

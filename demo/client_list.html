@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intervinientes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">Certificación Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="document_list.html">Trámites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="upload.html">Nuevo trámite</a>
+    <a href="audit_trail.html">Auditoría</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Intervinientes</h3>
+    <a href="client_list.html">Listado</a>
+    <a href="document_list.html">Trámites asociados</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Intervinientes registrados</h1>
+        <p>Personas físicas y jurídicas asociadas a trámites digitales del entorno piloto.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre / razón social</th>
+            <th>Tipo</th>
+            <th>Validación</th>
+            <th>Último trámite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>Persona física</td>
+            <td><span class="badge-ok">DNI + biometría</span></td>
+            <td>Poder general de administración</td>
+          </tr>
+          <tr>
+            <td>Estudio García & Asociados</td>
+            <td>Estudio jurídico</td>
+            <td><span class="badge-ok">Representación validada</span></td>
+            <td>Contrato de locación</td>
+          </tr>
+          <tr>
+            <td>Empresa Segura S.A.</td>
+            <td>Sociedad comercial</td>
+            <td><span class="badge-pending">Documentación pendiente</span></td>
+            <td>Acuerdo de confidencialidad</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

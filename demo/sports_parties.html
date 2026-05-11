@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partes intervinientes deportivas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Partes</h3>
+    <span class="step-pill"><strong>1. Agente FIFA</strong>Validado</span>
+    <span class="step-pill"><strong>2. Contrato</strong>Seleccionado</span>
+    <span class="step-pill"><strong>3. Clausulas</strong>Condiciones</span>
+    <span class="step-pill active"><strong>4. Partes</strong>Intervinientes y firma</span>
+    <span class="step-pill"><strong>5. Federacion</strong>Control normativo</span>
+    <span class="step-pill"><strong>6. Escribano</strong>Certificacion</span>
+    <span class="step-pill"><strong>7. Archivo</strong>Registro federado</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Partes intervinientes y circuito de firma</h1>
+        <p>Antes de la celebracion definitiva, cada parte debe ser identificada, autorizada y dejar su firma o conformidad digital. El formulario admite representacion compartida, colectiva y contrataciones con varios integrantes.</p>
+      </div>
+      <a class="btn" href="sports_document.html">Ver documento generado</a>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Agregar parte interviniente</h2>
+        <div class="form-grid">
+          <div>
+            <label>Tipo de parte</label>
+            <select id="sportsPartyType">
+              <option>Jugador</option>
+              <option>Agente FIFA</option>
+              <option>Co-agente / representante compartido</option>
+              <option>Club</option>
+              <option>Sponsor</option>
+              <option>Director tecnico / entrenador</option>
+              <option>Cuerpo tecnico / equipo profesional</option>
+              <option>Profesional deportivo especializado</option>
+              <option>Asesor legal / apoderado</option>
+            </select>
+          </div>
+          <div>
+            <label>Nombre / razon social</label>
+            <input id="sportsPartyName" placeholder="Ej. Fernandez Angel Adrian">
+          </div>
+          <div>
+            <label>Documento / CUIT / ID federativo</label>
+            <input id="sportsPartyIdentifier" placeholder="DNI / CUIT / ID federativo">
+          </div>
+          <div>
+            <label>Email de notificacion</label>
+            <input id="sportsPartyEmail" placeholder="correo@dominio.com">
+          </div>
+          <div>
+            <label>Rol contractual</label>
+            <input id="sportsPartyRole" placeholder="Contraparte obligada a firma">
+          </div>
+        </div>
+        <div class="toolbar">
+          <button type="button" onclick="saveSportsParty()">Sumar parte</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Reglas de firma previa</h2>
+        <div class="evidence-list">
+          <div><strong>Identidad:</strong> cada parte se valida con documento, poder o representacion suficiente.</div>
+          <div><strong>Consentimiento:</strong> aceptacion expresa del texto contractual y clausulas particulares.</div>
+          <div><strong>Orden:</strong> partes firman antes de la actuacion notarial definitiva.</div>
+          <div><strong>Bloqueo:</strong> no se celebra definitivamente si falta firma o autorizacion.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tablero de seguimiento</h2>
+      <div class="status-board" id="sportsStatusBoard"></div>
+    </div>
+
+    <div class="card">
+      <h2>Intervinientes del contrato</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Parte</th>
+              <th>Rol</th>
+              <th>Validacion</th>
+              <th>Firma</th>
+              <th>Observacion</th>
+            </tr>
+          </thead>
+          <tbody id="sportsPartiesList"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Notificaciones del circuito</h2>
+      <div class="evidence-list" id="sportsNotifications">
+        <div><strong>Sin movimientos aun:</strong> al sumar partes o firmar se generan avisos demo por email.</div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

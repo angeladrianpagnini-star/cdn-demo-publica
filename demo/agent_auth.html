@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autenticacion Agente FIFA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Flujo deportivo</h3>
+    <span class="step-pill active"><strong>1. Agente FIFA</strong>Identidad y licencia</span>
+    <span class="step-pill"><strong>2. Contrato</strong>Repertorio autorizado</span>
+    <span class="step-pill"><strong>3. Clausulas</strong>Parametros y condiciones</span>
+    <span class="step-pill"><strong>4. Federacion</strong>Validacion AFA/FIFA</span>
+    <span class="step-pill"><strong>5. Partes</strong>Firmas previas</span>
+    <span class="step-pill"><strong>6. Federacion</strong>Validacion</span>
+    <span class="step-pill"><strong>7. Escribano</strong>Actuacion notarial</span>
+    <span class="step-pill"><strong>8. Archivo</strong>Registro y QR</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Identificacion y autenticacion del Agente FIFA</h1>
+        <p>Antes de crear un contrato deportivo, el sistema valida identidad, licencia, estado y alcance de actuacion del agente.</p>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Credencial del agente</h2>
+        <div class="form-grid">
+          <div>
+            <label>Nombre del agente</label>
+            <input id="sportsAgentName" value="Agente FIFA Demo">
+          </div>
+          <div>
+            <label>ID / licencia FIFA</label>
+            <input id="sportsAgentLicense" value="FIFA-AG-2026-001">
+          </div>
+          <div>
+            <label>Email de notificacion</label>
+            <input id="sportsAgentEmail" value="agente.demo@afa.local">
+          </div>
+          <div>
+            <label>Federacion vinculada</label>
+            <select id="sportsAgentFederation">
+              <option>AFA - Argentina</option>
+              <option>CONMEBOL / federacion miembro</option>
+              <option>FIFA internacional</option>
+            </select>
+          </div>
+          <div>
+            <label>Estado</label>
+            <input id="sportsAgentValidation" value="Pendiente de consulta federativa" readonly>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button type="button" onclick="saveSportsAgentAndGo('sports_repository.html')">Validar y continuar</button>
+          <a class="btn btn-secondary" href="sports_contracts.html">Volver</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Controles de autenticacion</h2>
+        <div class="evidence-list">
+          <div><strong>Identidad:</strong> documento, biometria, correo y dispositivo.</div>
+          <div><strong>Licencia:</strong> consulta al registro FIFA o fuente federativa integrada.</div>
+          <div><strong>Alcance:</strong> tipo de cliente que puede representar y jurisdiccion aplicable.</div>
+          <div><strong>Riesgo:</strong> bloqueo si la licencia esta vencida, suspendida o no comprobable.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Parametros doctrinarios/regulatorios a considerar</h2>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Contrato escrito:</strong> partes, duracion, honorarios, servicios y firmas.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Jugador / entrenador:</strong> control de plazo, asesoramiento legal y representacion vigente.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Club / federacion:</strong> representacion por transaccion y facultades del firmante.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

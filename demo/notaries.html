@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escribanos habilitados</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="document_list.html">Tramites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="upload.html">Nuevo tramite</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Registro notarial</h3>
+    <a href="notaries.html">Escribanos operadores</a>
+    <a href="upload.html">Seleccionar en tramite</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Escribanos habilitados para operar</h1>
+        <p>Registro de solicitudes de escribanos operadores. El alta no habilita por si misma: queda pendiente hasta decision del organismo regulador.</p>
+        <p><strong>Modo operativo:</strong> <span class="badge-neutral" data-mode></span></p>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Agregar escribano</h2>
+        <form id="notaryForm">
+          <div class="form-grid">
+            <div>
+              <label>Nombre completo</label>
+              <input id="newNotaryName" required value="">
+            </div>
+            <div>
+              <label>Matricula</label>
+              <input id="newNotaryMatricula" required value="">
+            </div>
+            <div>
+              <label>Colegio / organismo</label>
+              <input id="newNotaryColegio" required value="">
+            </div>
+            <div>
+              <label>Jurisdiccion</label>
+              <input id="newNotaryJurisdiction" required value="">
+            </div>
+          </div>
+          <div class="toolbar">
+            <button type="submit">Solicitar alta</button>
+            <a class="btn btn-secondary" href="regulator.html">Ir al organismo regulador</a>
+            <button type="button" class="btn-secondary" onclick="resetDemoData()">Restaurar datos demo</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Separacion de responsabilidades</h2>
+        <p>Quien solicita el alta no decide su propia habilitacion. La aprobacion queda en una interfaz separada para el organismo regulador o colegio competente.</p>
+        <div class="evidence-list">
+          <div><strong>Solicitante:</strong> carga datos y documentacion profesional.</div>
+          <div><strong>Organismo:</strong> valida matricula, jurisdiccion, certificado y estado.</div>
+          <div><strong>Auditoria:</strong> registra fecha, hora, operador, decision y evidencia.</div>
+          <div><strong>Resultado:</strong> solo escribanos habilitados pueden certificar actos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Listado de operadores</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Escribano</th>
+            <th>Matricula</th>
+            <th>Colegio</th>
+            <th>Jurisdiccion</th>
+            <th>Estado</th>
+            <th>Validacion</th>
+          </tr>
+        </thead>
+        <tbody id="notaryList"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Ultimos eventos tecnicos</h2>
+      <div class="evidence-list" id="auditPreview">
+        <div>Disponible al ejecutar la demo por servidor local.</div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

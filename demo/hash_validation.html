@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integridad documental</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="document_list.html">Tramites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="upload.html">Nuevo tramite</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Flujo certificado</h3>
+    <span class="step-pill"><strong>1. Alta</strong>Documento e intervinientes</span>
+    <span class="step-pill active"><strong>2. Integridad</strong>Hash SHA-256</span>
+    <span class="step-pill"><strong>3. Revision</strong>Control del acto</span>
+    <span class="step-pill"><strong>4. Firma</strong>Firmante y escribano</span>
+    <span class="step-pill"><strong>5. Evidencia</strong>Certificado exportable</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Validacion de integridad</h1>
+        <p>El sistema fija una huella criptografica del documento antes de cualquier intervencion.</p>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Documento original</h2>
+        <p><strong>Expediente:</strong> <span data-field="expediente"></span></p>
+        <p><strong>Tipo de acto:</strong> <span data-field="actType"></span></p>
+        <p><strong>Firmante:</strong> <span data-field="signerName"></span></p>
+        <p><strong>Escribano seleccionado:</strong> <span data-field="notaryName"></span></p>
+        <p><strong>Algoritmo:</strong> SHA-256</p>
+        <p><strong>Estado:</strong> <span class="badge-ok">Integridad validada</span></p>
+      </div>
+
+      <div class="card">
+        <h2>Huella criptografica</h2>
+        <p><code data-field="hash"></code></p>
+        <div class="evidence-list">
+          <div><strong>Evento registrado:</strong> documento incorporado al expediente.</div>
+          <div><strong>Custodia:</strong> almacenamiento cifrado en repositorio piloto.</div>
+          <div><strong>Auditoria:</strong> evento encadenado al log inmutable.</div>
+        </div>
+        <div class="toolbar">
+          <a class="btn" href="document_preview.html" onclick="caseAction('case.integrity.generated', 'Hash SHA-256 generado y documento incorporado a custodia.', 'document_preview.html'); return false;">Continuar a revision</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

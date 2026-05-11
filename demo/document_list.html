@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trámites</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">Certificación Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="document_list.html">Trámites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="upload.html">Nuevo trámite</a>
+    <a href="audit_trail.html">Auditoría</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Gestión</h3>
+    <a href="document_list.html">Todos los trámites</a>
+    <a href="upload.html">Nuevo trámite</a>
+    <a href="audit_trail.html">Auditoría</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Trámites notariales</h1>
+        <p>Expedientes digitales con estado de firma, identidad, custodia y certificación.</p>
+      </div>
+      <a class="btn" href="upload.html">Crear trámite</a>
+    </div>
+
+    <div class="card">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Expediente</th>
+            <th>Documento</th>
+            <th>Interviniente</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CDN-2026-000134</td>
+            <td>Poder general de administración</td>
+            <td>Juan Pérez</td>
+            <td><span class="badge-pending">Pendiente firma notarial</span></td>
+            <td><span class="badge-ok">Hash + KYC</span></td>
+          </tr>
+          <tr>
+            <td>CDN-2026-000128</td>
+            <td>Contrato de locación</td>
+            <td>Estudio García</td>
+            <td><span class="badge-ok">Certificado</span></td>
+            <td><span class="badge-ok">Completa</span></td>
+          </tr>
+          <tr>
+            <td>CDN-2026-000121</td>
+            <td>Acuerdo de confidencialidad</td>
+            <td>Empresa Segura S.A.</td>
+            <td><span class="badge-neutral">Borrador</span></td>
+            <td><span class="badge-pending">Pendiente</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

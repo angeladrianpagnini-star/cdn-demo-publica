@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archivo federado deportivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="sports_archive.html">Archivo federado</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Archivo</h3>
+    <span class="step-pill"><strong>6. Escribano</strong>Certificado</span>
+    <span class="step-pill active"><strong>7. Archivo</strong>Registro federado</span>
+    <span class="step-pill"><strong>8. Derivacion</strong>Area legal si aplica</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Registro, archivo y derivacion federativa</h1>
+        <p>Luego de la certificacion notarial, el contrato no termina: se archiva, se registra y queda disponible para controles federativos o legales.</p>
+      </div>
+    </div>
+
+    <div class="grid three">
+      <div class="card metric">
+        <strong>Hash</strong>
+        <span data-sports="sportsDocumentHash">Integridad del contrato certificado y paquete de evidencia.</span>
+      </div>
+      <div class="card metric">
+        <strong>AFA</strong>
+        <span>Repositorio federativo local y derivacion a area legal.</span>
+      </div>
+      <div class="card metric">
+        <strong>FIFA</strong>
+        <span>Escalabilidad internacional por federaciones miembro.</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Paquete archivado</h2>
+      <div class="evidence-list">
+        <div><strong>Expediente:</strong> <span data-sports="sportsExpediente"></span></div>
+        <div><strong>Contrato certificado:</strong> <span data-sports="sportsContractType"></span> firmado por partes y escribano.</div>
+        <div><strong>Estado final:</strong> <span data-sports="sportsStatus"></span></div>
+        <div><strong>Registro:</strong> identificador federado, hash, sello temporal y cadena de custodia.</div>
+        <div><strong>Acceso:</strong> partes autorizadas, federacion, escribano y organos competentes.</div>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>QR de validacion</h2>
+        <div class="qr-demo" aria-label="QR demo">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p><code data-sports="sportsQrCode"></code></p>
+      </div>
+      <div class="card">
+        <h2>Notificaciones emitidas</h2>
+        <div class="evidence-list" id="sportsNotifications"></div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

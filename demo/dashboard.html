@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel institucional</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="document_list.html">Tramites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="notaries.html">Escribanos</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa escribano</a>
+    <a href="upload.html">Nuevo tramite</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Modulos</h3>
+    <a href="dashboard.html">Resumen institucional</a>
+    <a href="sports_contracts.html">Contratos deportivos</a>
+    <a href="upload.html">Certificacion guiada</a>
+    <a href="notaries.html">Escribanos operadores</a>
+    <a href="regulator.html">Organismo regulador</a>
+    <a href="notary_workspace.html">Mesa del escribano</a>
+    <a href="document_list.html">Gestion de tramites</a>
+    <a href="client_list.html">Intervinientes</a>
+    <a href="audit_trail.html">Cadena de custodia</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Panel del escribano</h1>
+        <p>Vista de control para tramites digitales con evidencia verificable, firma digital, cifrado, trazabilidad y conservacion probatoria en el tiempo.</p>
+        <p><strong>Modo operativo:</strong> <span class="badge-neutral" data-mode></span></p>
+      </div>
+      <a class="btn" href="upload.html">Iniciar tramite</a>
+    </div>
+
+    <div class="grid three">
+      <div class="card metric">
+        <strong>12</strong>
+        <span>Tramites activos en el entorno piloto.</span>
+      </div>
+      <div class="card metric">
+        <strong>4</strong>
+        <span>Certificaciones pendientes de actuacion notarial.</span>
+      </div>
+      <div class="card metric">
+        <strong>100%</strong>
+        <span>Paquetes de evidencia con hash, cifrado y sello temporal.</span>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Tramite prioritario</h2>
+        <p><strong>Expediente:</strong> <span data-field="expediente"></span></p>
+        <p><strong>Documento:</strong> <span data-field="actType"></span></p>
+        <p><strong>Firmante:</strong> <span data-field="signerName"></span></p>
+        <p><strong>Escribano:</strong> <span data-field="notaryName"></span></p>
+        <p><strong>Estado:</strong> <span class="badge-pending">Pendiente firma notarial</span></p>
+        <div class="toolbar">
+          <a class="btn" href="notary_sign.html">Continuar certificacion</a>
+          <a class="btn btn-secondary" href="upload.html">Editar datos</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Ultimos eventos</h2>
+        <ul class="timeline">
+          <li><strong>Identidad validada</strong> <span data-field="signerName"></span> completo verificacion documental y biometrica.</li>
+          <li><strong>Escribano autenticado</strong> <span data-field="notaryName"></span> fue validado contra registro regulatorio simulado.</li>
+          <li><strong>Hash generado</strong> SHA-256 registrado para el documento original.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Hilos operativos de la herramienta</h2>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Solicitante:</strong> carga tramite, firmante, documento y escribano requerido.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Organismo regulador:</strong> valida matricula, certificado y habilitacion profesional.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Escribano:</strong> gestiona documentos asignados y actua solo si esta habilitado.</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <a class="btn" href="upload.html">Hilo solicitante</a>
+        <a class="btn btn-secondary" href="regulator.html">Hilo regulador</a>
+        <a class="btn btn-secondary" href="notary_workspace.html">Hilo escribano</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Vertical piloto: contratos deportivos federados</h2>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Agentes FIFA:</strong> validacion de licencia, identidad y estado ante organismos deportivos.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>AFA / federacion:</strong> repositorio federado para contratos y evidencia auditable.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Escribano:</strong> certificacion notarial del acto y resguardo juridico documental.</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <a class="btn" href="sports_contracts.html">Ver modelo deportivo</a>
+        <a class="btn btn-secondary" href="agent_auth.html">Crear contrato deportivo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Ejes prioritarios de ciberseguridad</h2>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Autenticacion:</strong> usuarios, roles, sesiones, certificados y validacion de identidad.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Confidencialidad:</strong> comunicaciones TLS y documentos cifrados en reposo.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Integridad:</strong> hash SHA-256, sello temporal y auditoria encadenada.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Disponibilidad:</strong> backups cifrados, restauracion probada y continuidad operativa.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Trazabilidad:</strong> registro de quien hizo que, cuando, desde donde y con que resultado.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Conservacion:</strong> evidencia verificable hoy y en el futuro, incluso ante cambios tecnologicos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+
