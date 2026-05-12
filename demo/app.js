@@ -2,10 +2,288 @@
   const caseKey = "cdn_case";
   const notaryKey = "cdn_notaries";
   const sportsKey = "cdn_sports_contract";
+  const languageKey = "cdn_language";
   const apiEnabled = ["localhost", "127.0.0.1"].includes(location.hostname);
   let currentCase = null;
   let currentNotaries = [];
   let currentSportsContract = null;
+
+  const translations = {
+    en: {
+      "Acceso - Certificacion Digital Notarial": "Access - Digital Notarial Certification",
+      "Acceso - Certificación Digital Notarial": "Access - Digital Notarial Certification",
+      "Certificacion Digital Notarial": "Digital Notarial Certification",
+      "Certificación Digital Notarial": "Digital Notarial Certification",
+      "Demo piloto institucional": "Institutional pilot demo",
+      "DEMO PILOTO": "PILOT DEMO",
+      "Demo piloto": "Pilot demo",
+      "Panel": "Dashboard",
+      "Deportivo": "Sports",
+      "Agente FIFA": "FIFA Agent",
+      "Contratos": "Contracts",
+      "Organismo regulador": "Regulatory body",
+      "Mesa escribano": "Notary desk",
+      "Mesa del escribano": "Notary desk",
+      "Auditoria": "Audit",
+      "Auditoría": "Audit",
+      "Tramites": "Cases",
+      "Trámites": "Cases",
+      "Intervinientes": "Parties",
+      "Escribanos": "Notaries",
+      "Nuevo tramite": "New case",
+      "Nuevo trámite": "New case",
+      "Entrar a la plataforma": "Enter the platform",
+      "Entrar a la herramienta": "Enter the tool",
+      "Ver piloto deportivo": "View sports pilot",
+      "Certificación Digital Notarial para contratos y evidencia deportiva federada": "Digital Notarial Certification for contracts and federated sports evidence",
+      "Una herramienta para cargar o construir documentos, autenticar partes, validar intervención federativa, certificar con escribano y conservar evidencia verificable con hash, QR y cadena de custodia.": "A tool to upload or build documents, authenticate parties, validate federative intervention, certify through a notary and preserve verifiable evidence with hash, QR and chain of custody.",
+      "Portada conceptual de certificación digital notarial y contratos deportivos": "Concept cover for digital notarial certification and sports contracts",
+      "Panel del escribano": "Notary dashboard",
+      "Vista de control para tramites digitales con evidencia verificable, firma digital, cifrado, trazabilidad y conservacion probatoria en el tiempo.": "Control view for digital cases with verifiable evidence, digital signature, encryption, traceability and long-term evidentiary preservation.",
+      "Modo operativo:": "Operating mode:",
+      "MVP con API local": "MVP with local API",
+      "Iniciar tramite": "Start case",
+      "Iniciar trámite": "Start case",
+      "Tramite prioritario": "Priority case",
+      "Trámite prioritario": "Priority case",
+      "Ultimos eventos": "Latest events",
+      "Últimos eventos": "Latest events",
+      "Cadena de custodia": "Chain of custody",
+      "Resumen institucional": "Institutional overview",
+      "Certificacion guiada": "Guided certification",
+      "Certificación guiada": "Guided certification",
+      "Escribanos operadores": "Operating notaries",
+      "Gestion de tramites": "Case management",
+      "Gestión de trámites": "Case management",
+      "Contratos deportivos federados": "Federated sports contracts",
+      "Modelo piloto para agente FIFA, AFA/FIFA, partes deportivas, escribano y archivo probatorio.": "Pilot model for FIFA agent, AFA/FIFA, sports parties, notary and evidentiary archive.",
+      "Estado actual del expediente deportivo": "Current status of the sports file",
+      "Dos formas de operar": "Two ways to operate",
+      "Cargar documento:": "Upload document:",
+      "Construcción asistida:": "Assisted construction:",
+      "Repositorio especial de contratos": "Special contract repository",
+      "Validacion federativa": "Federative validation",
+      "Validación federativa": "Federative validation",
+      "Flujo piloto AFA / FIFA": "AFA / FIFA pilot flow",
+      "Contrato ejemplo": "Sample contract",
+      "Entrar al modulo deportivo": "Enter sports module",
+      "Entrar al módulo deportivo": "Enter sports module",
+      "Crear contrato": "Create contract",
+      "Identificacion y autenticacion de Agente FIFA": "FIFA Agent identification and authentication",
+      "Identificación y autenticación de Agente FIFA": "FIFA Agent identification and authentication",
+      "Validar agente": "Validate agent",
+      "Repertorio autorizado de contratos deportivos": "Authorized sports contract repository",
+      "Seleccion del instrumento segun cliente, operacion y normativa aplicable. Luego se parametrizan clausulas particulares y se envia a validacion federativa/notarial.": "Instrument selection by client, operation and applicable regulations. Then particular clauses are parameterized and sent to federative/notarial validation.",
+      "Contratos de representacion": "Representation contracts",
+      "Contratos de representación": "Representation contracts",
+      "Contratos comerciales y de contratacion": "Commercial and engagement contracts",
+      "Contratos comerciales y de contratación": "Commercial and engagement contracts",
+      "Instrumento": "Instrument",
+      "Cliente": "Client",
+      "Controles": "Controls",
+      "Accion": "Action",
+      "Acción": "Action",
+      "Configurar": "Configure",
+      "Constructor de clausulas y condiciones particulares": "Clause and particular conditions builder",
+      "Constructor de cláusulas y condiciones particulares": "Clause and particular conditions builder",
+      "Configuracion guiada para adaptar contratos deportivos sin perder controles normativos, federativos y notariales.": "Guided configuration to adapt sports contracts without losing regulatory, federative and notarial controls.",
+      "Datos esenciales": "Essential data",
+      "Clausulas particulares": "Particular clauses",
+      "Cláusulas particulares": "Particular clauses",
+      "Tipo de contrato": "Contract type",
+      "Cliente representado": "Represented client",
+      "Duracion": "Duration",
+      "Duración": "Duration",
+      "Honorarios / fee": "Fees",
+      "Alcance geografico": "Geographic scope",
+      "Alcance geográfico": "Geographic scope",
+      "Exclusividad": "Exclusivity",
+      "Enviar a validacion": "Send for validation",
+      "Enviar a validación": "Send for validation",
+      "Partes intervinientes": "Participating parties",
+      "Agregar parte": "Add party",
+      "Documento deportivo": "Sports document",
+      "Firma digital": "Digital signature",
+      "Certificacion notarial": "Notarial certification",
+      "Certificación notarial": "Notarial certification",
+      "Archivo y registro": "Archive and record",
+      "Validacion AFA / federacion": "AFA / federation validation",
+      "Validación AFA / federación": "AFA / federation validation",
+      "Registro y archivo federativo": "Federative record and archive",
+      "Linea de tiempo": "Timeline",
+      "Línea de tiempo": "Timeline",
+      "Paquete de evidencia": "Evidence package",
+      "Idioma": "Language"
+    },
+    pt: {
+      "Acceso - Certificacion Digital Notarial": "Acesso - Certificação Digital Notarial",
+      "Acceso - Certificación Digital Notarial": "Acesso - Certificação Digital Notarial",
+      "Certificacion Digital Notarial": "Certificação Digital Notarial",
+      "Certificación Digital Notarial": "Certificação Digital Notarial",
+      "Demo piloto institucional": "Demonstração piloto institucional",
+      "DEMO PILOTO": "DEMO PILOTO",
+      "Demo piloto": "Demo piloto",
+      "Panel": "Painel",
+      "Deportivo": "Esportivo",
+      "Agente FIFA": "Agente FIFA",
+      "Contratos": "Contratos",
+      "Organismo regulador": "Órgão regulador",
+      "Mesa escribano": "Mesa do tabelião",
+      "Mesa del escribano": "Mesa do tabelião",
+      "Auditoria": "Auditoria",
+      "Auditoría": "Auditoria",
+      "Tramites": "Processos",
+      "Trámites": "Processos",
+      "Intervinientes": "Partes",
+      "Escribanos": "Tabeliães",
+      "Nuevo tramite": "Novo processo",
+      "Nuevo trámite": "Novo processo",
+      "Entrar a la plataforma": "Entrar na plataforma",
+      "Entrar a la herramienta": "Entrar na ferramenta",
+      "Ver piloto deportivo": "Ver piloto esportivo",
+      "Certificación Digital Notarial para contratos y evidencia deportiva federada": "Certificação Digital Notarial para contratos e evidência esportiva federada",
+      "Una herramienta para cargar o construir documentos, autenticar partes, validar intervención federativa, certificar con escribano y conservar evidencia verificable con hash, QR y cadena de custodia.": "Uma ferramenta para carregar ou construir documentos, autenticar partes, validar intervenção federativa, certificar com tabelião e conservar evidência verificável com hash, QR e cadeia de custódia.",
+      "Portada conceptual de certificación digital notarial y contratos deportivos": "Capa conceitual de certificação digital notarial e contratos esportivos",
+      "Panel del escribano": "Painel do tabelião",
+      "Vista de control para tramites digitales con evidencia verificable, firma digital, cifrado, trazabilidad y conservacion probatoria en el tiempo.": "Visão de controle para processos digitais com evidência verificável, assinatura digital, criptografia, rastreabilidade e preservação probatória no tempo.",
+      "Modo operativo:": "Modo operacional:",
+      "MVP con API local": "MVP com API local",
+      "Iniciar tramite": "Iniciar processo",
+      "Iniciar trámite": "Iniciar processo",
+      "Tramite prioritario": "Processo prioritário",
+      "Trámite prioritario": "Processo prioritário",
+      "Ultimos eventos": "Últimos eventos",
+      "Últimos eventos": "Últimos eventos",
+      "Cadena de custodia": "Cadeia de custódia",
+      "Resumen institucional": "Resumo institucional",
+      "Certificacion guiada": "Certificação guiada",
+      "Certificación guiada": "Certificação guiada",
+      "Escribanos operadores": "Tabeliães operadores",
+      "Gestion de tramites": "Gestão de processos",
+      "Gestión de trámites": "Gestão de processos",
+      "Contratos deportivos federados": "Contratos esportivos federados",
+      "Modelo piloto para agente FIFA, AFA/FIFA, partes deportivas, escribano y archivo probatorio.": "Modelo piloto para agente FIFA, AFA/FIFA, partes esportivas, tabelião e arquivo probatório.",
+      "Estado actual del expediente deportivo": "Estado atual do expediente esportivo",
+      "Dos formas de operar": "Duas formas de operar",
+      "Cargar documento:": "Carregar documento:",
+      "Construcción asistida:": "Construção assistida:",
+      "Repositorio especial de contratos": "Repositório especial de contratos",
+      "Validacion federativa": "Validação federativa",
+      "Validación federativa": "Validação federativa",
+      "Flujo piloto AFA / FIFA": "Fluxo piloto AFA / FIFA",
+      "Contrato ejemplo": "Contrato exemplo",
+      "Entrar al modulo deportivo": "Entrar no módulo esportivo",
+      "Entrar al módulo deportivo": "Entrar no módulo esportivo",
+      "Crear contrato": "Criar contrato",
+      "Identificacion y autenticacion de Agente FIFA": "Identificação e autenticação de Agente FIFA",
+      "Identificación y autenticación de Agente FIFA": "Identificação e autenticação de Agente FIFA",
+      "Validar agente": "Validar agente",
+      "Repertorio autorizado de contratos deportivos": "Repertório autorizado de contratos esportivos",
+      "Seleccion del instrumento segun cliente, operacion y normativa aplicable. Luego se parametrizan clausulas particulares y se envia a validacion federativa/notarial.": "Seleção do instrumento conforme cliente, operação e norma aplicável. Depois as cláusulas particulares são parametrizadas e enviadas à validação federativa/notarial.",
+      "Contratos de representacion": "Contratos de representação",
+      "Contratos de representación": "Contratos de representação",
+      "Contratos comerciales y de contratacion": "Contratos comerciais e de contratação",
+      "Contratos comerciales y de contratación": "Contratos comerciais e de contratação",
+      "Instrumento": "Instrumento",
+      "Cliente": "Cliente",
+      "Controles": "Controles",
+      "Accion": "Ação",
+      "Acción": "Ação",
+      "Configurar": "Configurar",
+      "Constructor de clausulas y condiciones particulares": "Construtor de cláusulas e condições particulares",
+      "Constructor de cláusulas y condiciones particulares": "Construtor de cláusulas e condições particulares",
+      "Configuracion guiada para adaptar contratos deportivos sin perder controles normativos, federativos y notariales.": "Configuração guiada para adaptar contratos esportivos sem perder controles normativos, federativos e notariais.",
+      "Datos esenciales": "Dados essenciais",
+      "Clausulas particulares": "Cláusulas particulares",
+      "Cláusulas particulares": "Cláusulas particulares",
+      "Tipo de contrato": "Tipo de contrato",
+      "Cliente representado": "Cliente representado",
+      "Duracion": "Duração",
+      "Duración": "Duração",
+      "Honorarios / fee": "Honorários / fee",
+      "Alcance geografico": "Alcance geográfico",
+      "Alcance geográfico": "Alcance geográfico",
+      "Exclusividad": "Exclusividade",
+      "Enviar a validacion": "Enviar para validação",
+      "Enviar a validación": "Enviar para validação",
+      "Partes intervinientes": "Partes intervenientes",
+      "Agregar parte": "Adicionar parte",
+      "Documento deportivo": "Documento esportivo",
+      "Firma digital": "Assinatura digital",
+      "Certificacion notarial": "Certificação notarial",
+      "Certificación notarial": "Certificação notarial",
+      "Archivo y registro": "Arquivo e registro",
+      "Validacion AFA / federacion": "Validação AFA / federação",
+      "Validación AFA / federación": "Validação AFA / federação",
+      "Registro y archivo federativo": "Registro e arquivo federativo",
+      "Linea de tiempo": "Linha do tempo",
+      "Línea de tiempo": "Linha do tempo",
+      "Paquete de evidencia": "Pacote de evidência",
+      "Idioma": "Idioma"
+    }
+  };
+
+  function getLanguage() {
+    return localStorage.getItem(languageKey) || "es";
+  }
+
+  function translateText(text, dictionary) {
+    const compact = text.replace(/\s+/g, " ").trim();
+    if (!compact || !dictionary[compact]) return text;
+    return text.replace(compact, dictionary[compact]);
+  }
+
+  function applyLanguage() {
+    const language = getLanguage();
+    const dictionary = translations[language];
+    document.documentElement.lang = language;
+    if (!dictionary) return;
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentElement;
+        if (!parent || ["SCRIPT", "STYLE", "TEXTAREA", "INPUT", "OPTION"].includes(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach((node) => {
+      node.nodeValue = translateText(node.nodeValue, dictionary);
+    });
+
+    ["title", "aria-label", "alt", "placeholder"].forEach((attribute) => {
+      document.querySelectorAll(`[${attribute}]`).forEach((element) => {
+        const value = element.getAttribute(attribute);
+        if (value && dictionary[value]) element.setAttribute(attribute, dictionary[value]);
+      });
+    });
+    if (document.title && dictionary[document.title]) document.title = dictionary[document.title];
+  }
+
+  function initLanguageSelector() {
+    if (document.querySelector(".language-switcher")) return;
+    const wrapper = document.createElement("label");
+    wrapper.className = "language-switcher";
+    wrapper.innerHTML = `
+      <span>Idioma</span>
+      <select aria-label="Idioma">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+        <option value="pt">PT</option>
+      </select>
+    `;
+    const select = wrapper.querySelector("select");
+    select.value = getLanguage();
+    select.addEventListener("change", () => {
+      localStorage.setItem(languageKey, select.value);
+      window.location.reload();
+    });
+    document.body.appendChild(wrapper);
+  }
 
   const defaultCase = {
     expediente: "CDN-2026-000134",
@@ -790,6 +1068,7 @@
     }
 
     renderSportsStatusBoard(sports);
+    applyLanguage();
   }
 
   function renderSportsStatusBoard(sports) {
@@ -831,6 +1110,8 @@
       bindNotaryForm();
       bindSportsForms();
       renderSportsContract();
+      initLanguageSelector();
+      applyLanguage();
     } catch (error) {
       console.error(error);
       alert(`No se pudo iniciar la demo: ${error.message}`);

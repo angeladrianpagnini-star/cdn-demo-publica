@@ -841,6 +841,46 @@ textarea {
   margin-top: 6px;
 }
 
+.language-switcher {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  color: var(--primary);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20;
+}
+
+.language-switcher select {
+  appearance: none;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  min-width: 58px;
+  padding: 6px 24px 6px 10px;
+}
+
+.language-switcher::after {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--primary);
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  right: 18px;
+}
+
 @media (max-width: 920px) {
   header,
   .page-title {
@@ -907,5 +947,10 @@ textarea {
 
   .content {
     padding: 18px;
+  }
+
+  .language-switcher {
+    bottom: 12px;
+    right: 12px;
   }
 }
