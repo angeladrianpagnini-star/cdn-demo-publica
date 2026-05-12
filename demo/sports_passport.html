@@ -26,6 +26,7 @@
     <h3>Pasaporte deportivo</h3>
     <a href="#alta">Alta del deportista</a>
     <a href="#documentos">Documentos requeridos</a>
+    <a href="#repositorio">Repositorio</a>
     <a href="#canal">Canal de gestion</a>
     <a href="#trazabilidad">Trazabilidad</a>
   </aside>
@@ -102,6 +103,7 @@
       <div class="toolbar">
         <button type="button">Guardar ficha demo</button>
         <a class="btn btn-secondary" href="#documentos">Ver documentos</a>
+        <a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a>
       </div>
     </div>
 
@@ -109,13 +111,13 @@
       <div class="card">
         <h2>Documentos requeridos</h2>
         <div class="passport-checklist">
-          <label><input type="checkbox" checked> Ficha de inscripcion deportiva</label>
-          <label><input type="checkbox" checked> Autorizacion de madre, padre o tutor</label>
-          <label><input type="checkbox"> Apto medico vigente</label>
-          <label><input type="checkbox"> Cobertura de seguro / obra social</label>
-          <label><input type="checkbox"> Consentimiento para viajes o torneos</label>
-          <label><input type="checkbox"> Declaracion de responsabilidad civil</label>
-          <label><input type="checkbox"> Registro de sanciones u observaciones</label>
+          <label><input type="checkbox" checked> Ficha de inscripcion deportiva <a href="sports_passport_document.html">Ver</a></label>
+          <label><input type="checkbox" checked> Autorizacion de madre, padre o tutor <a href="sports_passport_document.html">Ver</a></label>
+          <label><input type="checkbox"> Apto medico vigente <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Cobertura de seguro / obra social <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Consentimiento para viajes o torneos <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Declaracion de responsabilidad civil <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Registro de sanciones u observaciones <a href="sports_passport_document.html">Ver muestra</a></label>
         </div>
       </div>
 
@@ -127,6 +129,56 @@
           <div><strong>Nivel 3</strong><span>Academia o escuela aprueba documentacion.</span></div>
           <div><strong>Nivel 4</strong><span>Liga regional confirma habilitacion deportiva.</span></div>
           <div><strong>Nivel 5</strong><span>Certificacion reforzada para casos sensibles.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="repositorio" class="card">
+      <h2>Repositorio documental del pasaporte</h2>
+      <p>El objetivo no es solo cargar archivos: cada documento queda visible, controlado por estado, trazado por evento y asociado a evidencia verificable.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Responsable</th>
+            <th>Estado</th>
+            <th>Evidencia</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ficha de inscripcion deportiva</td>
+            <td>Academia</td>
+            <td><span class="badge-ok">Validado</span></td>
+            <td><span class="badge-ok">Hash + fecha</span></td>
+            <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a></td>
+          </tr>
+          <tr>
+            <td>Autorizacion de tutor</td>
+            <td>Familia / tutor</td>
+            <td><span class="badge-pending">Firma pendiente</span></td>
+            <td><span class="badge-pending">Identidad + consentimiento</span></td>
+            <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a></td>
+          </tr>
+          <tr>
+            <td>Apto medico vigente</td>
+            <td>Profesional / familia</td>
+            <td><span class="badge-neutral">Requerido</span></td>
+            <td><span class="badge-neutral">Pendiente</span></td>
+            <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver muestra</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Cifrado:</strong> documentos protegidos en reposo y acceso por rol.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Integridad:</strong> hash SHA-256 y sello temporal por documento.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Trazabilidad:</strong> cada vista, firma, observacion y validacion queda auditada.</div>
         </div>
       </div>
     </div>
@@ -157,6 +209,7 @@
       <h2>Tablero de avance del pasaporte</h2>
       <div class="status-board">
         <div class="status-step complete"><span></span><strong>Ficha creada</strong><small>Expediente PD-2026-0001</small></div>
+        <div class="status-step complete"><span></span><strong>Hash generado</strong><small>Ficha y autorizacion vinculadas</small></div>
         <div class="status-step complete"><span></span><strong>Tutor notificado</strong><small>Email y consentimiento pendiente</small></div>
         <div class="status-step pending"><span></span><strong>Apto medico</strong><small>Documento requerido</small></div>
         <div class="status-step pending"><span></span><strong>Academia</strong><small>Revision en curso</small></div>

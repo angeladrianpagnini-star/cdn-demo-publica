@@ -17,6 +17,7 @@ https://angeladrianpagnini-star.github.io/cdn-demo-publica/
 - Portada institucional clickeable.
 - Pantalla de abordaje modular para adopcion: deporte formativo, contratos profesionales y certificaciones generales.
 - Modulo propio de pasaporte documental deportivo para academias, escuelas y ligas de base.
+- Visor de documentos del pasaporte con hash, QR, control de acceso, paquete de evidencia y timeline forense.
 - Panel de control de tramites notariales.
 - Alta de tramite digital.
 - Seleccion y validacion de escribano.

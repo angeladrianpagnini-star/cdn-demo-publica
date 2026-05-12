@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento del pasaporte deportivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="strategy.html">Abordaje</a>
+    <a href="sports_passport.html">Pasaporte</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Documento</h3>
+    <a href="sports_passport.html">Volver al pasaporte</a>
+    <span class="step-pill active"><strong>1. Vista</strong>Documento controlado</span>
+    <span class="step-pill"><strong>2. Identidad</strong>Tutor y deportista</span>
+    <span class="step-pill"><strong>3. Integridad</strong>Hash y sello</span>
+    <span class="step-pill"><strong>4. Validacion</strong>Academia / liga</span>
+    <span class="step-pill"><strong>5. Archivo</strong>QR y evidencia</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Visor seguro del documento</h1>
+        <p>Vista de documento del pasaporte deportivo con evidencia, permisos, hash y trazabilidad. En produccion, esta pantalla abre el archivo real solo para roles autorizados.</p>
+        <p><strong>Expediente:</strong> <span class="badge-neutral">PD-2026-0001</span> <span class="badge-ok">Acceso autorizado</span></p>
+      </div>
+      <a class="btn" href="sports_passport.html">Volver al pasaporte</a>
+    </div>
+
+    <div class="grid two">
+      <div class="card document-sheet">
+        <h2>Autorizacion de participacion deportiva</h2>
+        <p><strong>Deportista:</strong> Jugador/a demo, DNI 00.000.000, categoria Infantil.</p>
+        <p><strong>Responsable:</strong> Madre / Padre / Tutor, notificado en familia.demo@correo.local.</p>
+        <p><strong>Institucion:</strong> Escuela deportiva piloto.</p>
+        <p>El responsable autoriza la participacion en entrenamientos, actividades deportivas y eventos internos bajo las condiciones informadas por la institucion, dejando constancia de cobertura, aptitud, consentimiento y canal de notificacion.</p>
+        <p>La presente vista representa el documento controlado del pasaporte. Cualquier modificacion posterior genera nuevo hash, version y evento de auditoria.</p>
+        <div class="signature-panel">
+          Espacio de firma digital / consentimiento del tutor y validacion de academia.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Controles de seguridad</h2>
+        <div class="evidence-list">
+          <div><strong>Acceso:</strong> rol autorizado, sesion vigente y registro de visualizacion.</div>
+          <div><strong>Confidencialidad:</strong> documento cifrado en reposo y transmision segura.</div>
+          <div><strong>Integridad:</strong> SHA-256 del documento original y version vigente.</div>
+          <div><strong>Disponibilidad:</strong> copia de respaldo y retencion asociada al ciclo deportivo.</div>
+          <div><strong>Menores:</strong> tratamiento reforzado por dato sensible y consentimiento familiar.</div>
+        </div>
+        <div class="toolbar">
+          <button type="button">Registrar visualizacion demo</button>
+          <a class="btn btn-secondary" href="sports_passport.html#repositorio">Repositorio</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Paquete de evidencia</h2>
+        <div class="evidence-list">
+          <div><strong>ID documento:</strong> PD-DOC-2026-0001-AUT</div>
+          <div><strong>Version:</strong> v1.0 vigente</div>
+          <div><strong>Hash SHA-256:</strong> <code>6F2B9A4E1D7C0A89C3D56E7810B44A19E45D90C25A7718E9F20C3AB0187D5F62</code></div>
+          <div><strong>Sello temporal:</strong> 2026-05-12 10:25:40 ART</div>
+          <div><strong>QR:</strong> PD-2026-0001/AUT/v1</div>
+          <div><strong>Retencion:</strong> temporada activa + plazo legal o institucional aplicable.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>QR de verificacion</h2>
+        <div class="qr-demo" aria-label="QR demo de verificacion documental">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p class="muted">El QR permite consultar estado, hash, version, emisor, validaciones y vigencia del documento sin exponer datos sensibles a usuarios no autorizados.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Timeline forense del documento</h2>
+      <ul class="timeline">
+        <li><strong>Documento creado</strong> Academia inicio ficha PD-2026-0001 y genero version v1.0.</li>
+        <li><strong>Tutor notificado</strong> Se envio aviso a familia.demo@correo.local con enlace seguro.</li>
+        <li><strong>Documento visto</strong> Acceso registrado con rol tutor, fecha, hora y resultado.</li>
+        <li><strong>Hash calculado</strong> SHA-256 incorporado al paquete de evidencia.</li>
+        <li><strong>Validacion pendiente</strong> Academia revisa consentimiento y deriva a liga si corresponde.</li>
+        <li><strong>Archivo futuro</strong> Al cierre se emite QR, constancia y paquete probatorio exportable.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
