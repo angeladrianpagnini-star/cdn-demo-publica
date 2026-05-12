@@ -2,11 +2,27 @@
   const caseKey = "cdn_case";
   const notaryKey = "cdn_notaries";
   const sportsKey = "cdn_sports_contract";
+  const passportKey = "cdn_sports_passport";
   const languageKey = "cdn_language";
   const apiEnabled = ["localhost", "127.0.0.1"].includes(location.hostname);
   let currentCase = null;
   let currentNotaries = [];
   let currentSportsContract = null;
+
+  const defaultPassport = {
+    expediente: "PD-2026-0001",
+    athleteName: "Jugador/a demo",
+    athleteId: "DNI 00.000.000",
+    birthDate: "2012-05-12",
+    academy: "Escuela deportiva piloto",
+    category: "Infantil",
+    tutor: "Madre / Padre / Tutor",
+    email: "familia.demo@correo.local",
+    channel: "Academia valida y deriva a liga",
+    status: "Ficha en edicion",
+    documents: [],
+    events: []
+  };
 
   const translations = {
     en: {
@@ -457,6 +473,16 @@
     return currentSportsContract || defaultSportsContract;
   }
 
+  function getPassport() {
+    return { ...defaultPassport, ...readJson(passportKey, {}) };
+  }
+
+  function savePassport(passport) {
+    const next = { ...defaultPassport, ...passport };
+    writeJson(passportKey, next);
+    return next;
+  }
+
   function getSelectedNotary(data) {
     return getNotaries().find((item) => item.id === data.notaryId) || getNotaries()[0];
   }
@@ -465,6 +491,14 @@
     document.querySelectorAll(selector).forEach((node) => {
       node.textContent = value;
     });
+  }
+
+  function setStatus(selector, message, ok = true) {
+    const target = document.querySelector(selector);
+    if (!target) return;
+    target.textContent = message;
+    target.classList.toggle("status-ok-text", ok);
+    target.classList.toggle("status-error-text", !ok);
   }
 
   function setModeBadge() {
@@ -1025,6 +1059,81 @@
     }
     if (target) window.location.href = target;
     else renderSportsContract();
+  };
+
+  window.savePassportProfile = function () {
+    const passport = getPassport();
+    const next = savePassport({
+      ...passport,
+      athleteName: document.getElementById("passportAthleteName")?.value || passport.athleteName,
+      athleteId: document.getElementById("passportAthleteId")?.value || passport.athleteId,
+      birthDate: document.getElementById("passportBirthDate")?.value || passport.birthDate,
+      academy: document.getElementById("passportAcademy")?.value || passport.academy,
+      category: document.getElementById("passportCategory")?.value || passport.category,
+      tutor: document.getElementById("passportTutor")?.value || passport.tutor,
+      email: document.getElementById("passportEmail")?.value || passport.email,
+      channel: document.getElementById("passportChannel")?.value || passport.channel,
+      status: "Ficha guardada - pendiente de validacion documental",
+      events: [
+        ...(passport.events || []),
+        {
+          at: new Date().toISOString(),
+          action: "passport.profile.saved",
+          detail: "Ficha deportiva guardada y disponible para gestion documental."
+        }
+      ]
+    });
+    setStatus("#passportSaveStatus", `Ficha guardada para ${next.athleteName}. Evento auditado y lista para gestionar documentos.`, true);
+  };
+
+  window.submitPassportDocument = function () {
+    const checks = [
+      ["passportBiometric", "biometria demo del operador"],
+      ["passportIdentityMatch", "coincidencia documento-persona"],
+      ["passportSensitiveConsent", "tratamiento de dato sensible"],
+      ["passportHashConsent", "hash y evento de auditoria"]
+    ];
+    const missing = checks
+      .filter(([id]) => !document.getElementById(id)?.checked)
+      .map(([, label]) => label);
+    if (missing.length) {
+      setStatus("#passportUploadStatus", `No se puede incorporar: falta confirmar ${missing.join(", ")}.`, false);
+      return false;
+    }
+
+    const passport = getPassport();
+    const fileInput = document.getElementById("passportUploadFile");
+    const fileName = fileInput?.files?.[0]?.name || "Documento demo sin archivo real";
+    const documentType = document.getElementById("passportUploadType")?.value || "Documento";
+    const next = savePassport({
+      ...passport,
+      status: "Documento incorporado a revision segura",
+      documents: [
+        ...(passport.documents || []),
+        {
+          id: `PD-DOC-${Date.now()}`,
+          type: documentType,
+          fileName,
+          role: document.getElementById("passportUploadRole")?.value || "Operador",
+          operator: document.getElementById("passportOperatorIdentity")?.value || "",
+          subject: document.getElementById("passportDocumentSubject")?.value || "",
+          email: document.getElementById("passportUploadEmail")?.value || passport.email,
+          status: "En revision",
+          hash: "SHA256-DEMO-" + Date.now().toString(16).toUpperCase(),
+          at: new Date().toISOString()
+        }
+      ],
+      events: [
+        ...(passport.events || []),
+        {
+          at: new Date().toISOString(),
+          action: "passport.document.submitted",
+          detail: `${documentType} incorporado con biometria, coincidencia e integridad confirmadas.`
+        }
+      ]
+    });
+    setStatus("#passportUploadStatus", `${documentType} incorporado a revision segura para ${next.athleteName}. Hash y auditoria registrados.`, true);
+    return true;
   };
 
   function renderSportsContract() {

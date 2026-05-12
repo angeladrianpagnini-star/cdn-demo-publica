@@ -62,23 +62,23 @@
       <div class="form-grid">
         <div>
           <label>Nombre del deportista</label>
-          <input value="Jugador/a demo">
+          <input id="passportAthleteName" value="Jugador/a demo">
         </div>
         <div>
           <label>Documento</label>
-          <input value="DNI 00.000.000">
+          <input id="passportAthleteId" value="DNI 00.000.000">
         </div>
         <div>
           <label>Fecha de nacimiento</label>
-          <input value="2012-05-12">
+          <input id="passportBirthDate" value="2012-05-12">
         </div>
         <div>
           <label>Academia / escuela</label>
-          <input value="Escuela deportiva piloto">
+          <input id="passportAcademy" value="Escuela deportiva piloto">
         </div>
         <div>
           <label>Categoria</label>
-          <select>
+          <select id="passportCategory">
             <option>Infantil</option>
             <option>Juvenil</option>
             <option>Reserva / formativo avanzado</option>
@@ -86,15 +86,15 @@
         </div>
         <div>
           <label>Responsable adulto</label>
-          <input value="Madre / Padre / Tutor">
+          <input id="passportTutor" value="Madre / Padre / Tutor">
         </div>
         <div>
           <label>Email de notificacion</label>
-          <input value="familia.demo@correo.local">
+          <input id="passportEmail" value="familia.demo@correo.local">
         </div>
         <div>
           <label>Canal de gestion</label>
-          <select>
+          <select id="passportChannel">
             <option>Academia valida y deriva a liga</option>
             <option>Liga revisa y observa</option>
             <option>Escribano certifica documentacion sensible</option>
@@ -102,10 +102,11 @@
         </div>
       </div>
       <div class="toolbar">
-        <button type="button">Guardar ficha demo</button>
+        <button type="button" onclick="savePassportProfile()">Guardar ficha demo</button>
         <a class="btn btn-secondary" href="#documentos">Gestionar documentos</a>
         <a class="btn btn-secondary" href="sports_passport_document.html">Ver ficha documental</a>
       </div>
+      <p class="muted" id="passportSaveStatus">Ficha en edicion. Al guardar se registra evento de alta y queda disponible para gestion documental.</p>
     </div>
 
     <div id="documentos" class="grid two">
@@ -141,7 +142,7 @@
       <div class="form-grid">
         <div>
           <label>Tipo de documento a incorporar</label>
-          <select>
+          <select id="passportUploadType">
             <option>Ficha medica / apto fisico</option>
             <option>Autorizacion de tutor</option>
             <option>Seguro / cobertura</option>
@@ -151,7 +152,7 @@
         </div>
         <div>
           <label>Responsable que carga</label>
-          <select>
+          <select id="passportUploadRole">
             <option>Tutor del deportista</option>
             <option>Academia / escuela</option>
             <option>Club receptor</option>
@@ -161,33 +162,34 @@
         </div>
         <div>
           <label>Identidad declarada del operador</label>
-          <input value="Madre / Padre / Tutor - DNI 11.111.111">
+          <input id="passportOperatorIdentity" value="Madre / Padre / Tutor - DNI 11.111.111">
         </div>
         <div>
           <label>Persona mencionada en el documento</label>
-          <input value="Jugador/a demo - DNI 00.000.000">
+          <input id="passportDocumentSubject" value="Jugador/a demo - DNI 00.000.000">
         </div>
         <div>
           <label>Archivo</label>
-          <input type="file">
+          <input id="passportUploadFile" type="file">
         </div>
         <div>
           <label>Correo para notificacion de estado</label>
-          <input value="familia.demo@correo.local">
+          <input id="passportUploadEmail" value="familia.demo@correo.local">
         </div>
       </div>
 
       <div class="passport-security-grid">
-        <label><input type="checkbox"> Confirmar biometria demo del operador</label>
-        <label><input type="checkbox"> Validar coincidencia documento-persona</label>
-        <label><input type="checkbox"> Aceptar tratamiento de dato sensible</label>
-        <label><input type="checkbox"> Registrar hash y evento de auditoria</label>
+        <label><input id="passportBiometric" type="checkbox"> Confirmar biometria demo del operador</label>
+        <label><input id="passportIdentityMatch" type="checkbox"> Validar coincidencia documento-persona</label>
+        <label><input id="passportSensitiveConsent" type="checkbox"> Aceptar tratamiento de dato sensible</label>
+        <label><input id="passportHashConsent" type="checkbox"> Registrar hash y evento de auditoria</label>
       </div>
 
       <div class="toolbar">
-        <button type="button">Incorporar a revision demo</button>
+        <button type="button" onclick="submitPassportDocument()">Incorporar a revision demo</button>
         <a class="btn btn-secondary" href="sports_passport_document.html">Ver visor seguro</a>
       </div>
+      <p class="muted" id="passportUploadStatus">Pendiente de autenticacion reforzada. Sin biometria y validacion de identidad, la herramienta no incorpora el documento.</p>
     </div>
 
     <div id="repositorio" class="card">

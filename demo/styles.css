@@ -928,6 +928,16 @@ textarea {
   margin-right: 10px;
 }
 
+.status-ok-text {
+  color: #007a66;
+  font-weight: 700;
+}
+
+.status-error-text {
+  color: var(--danger);
+  font-weight: 700;
+}
+
 .passport-roles strong,
 .passport-roles span {
   display: block;
