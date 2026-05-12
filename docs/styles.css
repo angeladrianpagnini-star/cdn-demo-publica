@@ -887,6 +887,44 @@ textarea {
   margin-top: 6px;
 }
 
+.passport-checklist,
+.passport-roles {
+  display: grid;
+  gap: 12px;
+}
+
+.passport-checklist label,
+.passport-roles div {
+  background: #f7fbfd;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: block;
+  padding: 14px;
+}
+
+.passport-checklist input {
+  margin-right: 10px;
+  transform: translateY(1px);
+}
+
+.passport-roles {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.passport-roles strong,
+.passport-roles span {
+  display: block;
+}
+
+.passport-roles strong {
+  color: var(--primary);
+}
+
+.passport-roles span {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
 .language-switcher {
   align-items: center;
   background: rgba(255, 255, 255, 0.96);

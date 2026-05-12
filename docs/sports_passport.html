@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasaporte documental deportivo</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Demo<br>Piloto</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="strategy.html">Abordaje</a>
+    <a href="sports_passport.html">Pasaporte</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="agent_auth.html">Agente FIFA</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Pasaporte deportivo</h3>
+    <a href="#alta">Alta del deportista</a>
+    <a href="#documentos">Documentos requeridos</a>
+    <a href="#canal">Canal de gestion</a>
+    <a href="#trazabilidad">Trazabilidad</a>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Pasaporte documental deportivo</h1>
+        <p>Modulo orientado a academias, escuelas y ligas de base para ordenar autorizaciones, salud, seguros, consentimiento familiar y respaldo probatorio antes de escalar a contratos profesionales.</p>
+        <p><strong>Mercado inicial:</strong> <span class="badge-neutral">academias</span> <span class="badge-neutral">escuelas de futbol</span> <span class="badge-neutral">ligas regionales</span></p>
+      </div>
+      <a class="btn" href="#alta">Iniciar ficha</a>
+    </div>
+
+    <div class="grid three">
+      <div class="card metric">
+        <strong>Menores</strong>
+        <span>Consentimiento familiar, autorizaciones y documentacion sensible bajo control.</span>
+      </div>
+      <div class="card metric">
+        <strong>Salud</strong>
+        <span>Apto medico, cobertura, restricciones, emergencias y vigencia documental.</span>
+      </div>
+      <div class="card metric">
+        <strong>Club / liga</strong>
+        <span>Inscripcion, categoria, temporada, seguros, sanciones y derivaciones.</span>
+      </div>
+    </div>
+
+    <div id="alta" class="card">
+      <h2>Alta orientativa del deportista</h2>
+      <div class="form-grid">
+        <div>
+          <label>Nombre del deportista</label>
+          <input value="Jugador/a demo">
+        </div>
+        <div>
+          <label>Documento</label>
+          <input value="DNI 00.000.000">
+        </div>
+        <div>
+          <label>Fecha de nacimiento</label>
+          <input value="2012-05-12">
+        </div>
+        <div>
+          <label>Academia / escuela</label>
+          <input value="Escuela deportiva piloto">
+        </div>
+        <div>
+          <label>Categoria</label>
+          <select>
+            <option>Infantil</option>
+            <option>Juvenil</option>
+            <option>Reserva / formativo avanzado</option>
+          </select>
+        </div>
+        <div>
+          <label>Responsable adulto</label>
+          <input value="Madre / Padre / Tutor">
+        </div>
+        <div>
+          <label>Email de notificacion</label>
+          <input value="familia.demo@correo.local">
+        </div>
+        <div>
+          <label>Canal de gestion</label>
+          <select>
+            <option>Academia valida y deriva a liga</option>
+            <option>Liga revisa y observa</option>
+            <option>Escribano certifica documentacion sensible</option>
+          </select>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button type="button">Guardar ficha demo</button>
+        <a class="btn btn-secondary" href="#documentos">Ver documentos</a>
+      </div>
+    </div>
+
+    <div id="documentos" class="grid two">
+      <div class="card">
+        <h2>Documentos requeridos</h2>
+        <div class="passport-checklist">
+          <label><input type="checkbox" checked> Ficha de inscripcion deportiva</label>
+          <label><input type="checkbox" checked> Autorizacion de madre, padre o tutor</label>
+          <label><input type="checkbox"> Apto medico vigente</label>
+          <label><input type="checkbox"> Cobertura de seguro / obra social</label>
+          <label><input type="checkbox"> Consentimiento para viajes o torneos</label>
+          <label><input type="checkbox"> Declaracion de responsabilidad civil</label>
+          <label><input type="checkbox"> Registro de sanciones u observaciones</label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Niveles de control</h2>
+        <div class="validation-levels">
+          <div><strong>Nivel 1</strong><span>Ficha cargada y fechada.</span></div>
+          <div><strong>Nivel 2</strong><span>Identidad del deportista y tutor validada.</span></div>
+          <div><strong>Nivel 3</strong><span>Academia o escuela aprueba documentacion.</span></div>
+          <div><strong>Nivel 4</strong><span>Liga regional confirma habilitacion deportiva.</span></div>
+          <div><strong>Nivel 5</strong><span>Certificacion reforzada para casos sensibles.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="canal" class="card">
+      <h2>Canal de gestion por roles</h2>
+      <div class="passport-roles">
+        <div>
+          <strong>Familia / tutor</strong>
+          <span>Carga datos, autoriza participacion, recibe notificaciones y firma consentimientos.</span>
+        </div>
+        <div>
+          <strong>Academia</strong>
+          <span>Controla documentacion inicial, observa faltantes y habilita participacion interna.</span>
+        </div>
+        <div>
+          <strong>Liga regional</strong>
+          <span>Valida inscripcion, categoria, pases, sanciones y aptitud documental.</span>
+        </div>
+        <div>
+          <strong>Escribano / certificador</strong>
+          <span>Interviene en autorizaciones sensibles, menores, viajes, poderes o conflictos documentales.</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="trazabilidad" class="card">
+      <h2>Tablero de avance del pasaporte</h2>
+      <div class="status-board">
+        <div class="status-step complete"><span></span><strong>Ficha creada</strong><small>Expediente PD-2026-0001</small></div>
+        <div class="status-step complete"><span></span><strong>Tutor notificado</strong><small>Email y consentimiento pendiente</small></div>
+        <div class="status-step pending"><span></span><strong>Apto medico</strong><small>Documento requerido</small></div>
+        <div class="status-step pending"><span></span><strong>Academia</strong><small>Revision en curso</small></div>
+        <div class="status-step pending"><span></span><strong>Liga regional</strong><small>En espera de derivacion</small></div>
+        <div class="status-step pending"><span></span><strong>Archivo QR</strong><small>Se emite al cerrar el paquete</small></div>
+      </div>
+      <ul class="timeline">
+        <li><strong>Alta de ficha</strong> Se registra deportista, tutor, academia, categoria y temporada.</li>
+        <li><strong>Carga documental</strong> Se incorporan consentimientos, salud, seguro y permisos.</li>
+        <li><strong>Observaciones</strong> Academia o liga pueden pedir correccion sin perder historial.</li>
+        <li><strong>Validacion</strong> Cada responsable deja decision, fecha, usuario y estado.</li>
+        <li><strong>Archivo verificable</strong> Se emite QR, hash y paquete de evidencia para consulta autorizada.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
