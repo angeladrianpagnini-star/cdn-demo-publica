@@ -15,12 +15,16 @@
     athleteId: "DNI 00.000.000",
     birthDate: "2012-05-12",
     academy: "Escuela deportiva piloto",
+    institutionType: "Academia de futbol",
     category: "Infantil",
     tutor: "Madre / Padre / Tutor",
     email: "familia.demo@correo.local",
-    channel: "Academia valida y deriva a liga",
+    referenceInstitution: "Liga regional / federacion de referencia",
+    referenceEmail: "referencia.demo@liga.local",
+    channel: "Institucion inicia y comunica a liga",
     status: "Ficha en edicion",
     documents: [],
+    notifications: [],
     events: []
   };
 
@@ -1069,21 +1073,39 @@
       athleteId: document.getElementById("passportAthleteId")?.value || passport.athleteId,
       birthDate: document.getElementById("passportBirthDate")?.value || passport.birthDate,
       academy: document.getElementById("passportAcademy")?.value || passport.academy,
+      institutionType: document.getElementById("passportInstitutionType")?.value || passport.institutionType,
       category: document.getElementById("passportCategory")?.value || passport.category,
       tutor: document.getElementById("passportTutor")?.value || passport.tutor,
       email: document.getElementById("passportEmail")?.value || passport.email,
+      referenceInstitution: document.getElementById("passportReferenceInstitution")?.value || passport.referenceInstitution,
+      referenceEmail: document.getElementById("passportReferenceEmail")?.value || passport.referenceEmail,
       channel: document.getElementById("passportChannel")?.value || passport.channel,
-      status: "Ficha guardada - pendiente de validacion documental",
+      status: "Ficha recibida y comunicada a institucion referencial",
+      notifications: [
+        ...(passport.notifications || []),
+        {
+          at: new Date().toISOString(),
+          to: document.getElementById("passportEmail")?.value || passport.email,
+          subject: "Recepcion de ficha documental deportiva",
+          status: "Usuario notificado"
+        },
+        {
+          at: new Date().toISOString(),
+          to: document.getElementById("passportReferenceEmail")?.value || passport.referenceEmail,
+          subject: "Comunicacion a institucion referencial",
+          status: "Recepcion informada para control u observacion"
+        }
+      ],
       events: [
         ...(passport.events || []),
         {
           at: new Date().toISOString(),
           action: "passport.profile.saved",
-          detail: "Ficha deportiva guardada y disponible para gestion documental."
+          detail: "Ficha deportiva guardada, usuario notificado e institucion referencial comunicada."
         }
       ]
     });
-    setStatus("#passportSaveStatus", `Ficha guardada para ${next.athleteName}. Evento auditado y lista para gestionar documentos.`, true);
+    setStatus("#passportSaveStatus", `Ficha guardada para ${next.athleteName}. Se notifico al usuario y a ${next.referenceInstitution}.`, true);
   };
 
   window.submitPassportDocument = function () {
@@ -1123,16 +1145,31 @@
           at: new Date().toISOString()
         }
       ],
+      notifications: [
+        ...(passport.notifications || []),
+        {
+          at: new Date().toISOString(),
+          to: document.getElementById("passportUploadEmail")?.value || passport.email,
+          subject: "Recepcion de documentacion deportiva",
+          status: `${documentType} recibido para revision`
+        },
+        {
+          at: new Date().toISOString(),
+          to: passport.referenceEmail,
+          subject: "Documento disponible para observacion o validacion",
+          status: "Institucion referencial comunicada"
+        }
+      ],
       events: [
         ...(passport.events || []),
         {
           at: new Date().toISOString(),
           action: "passport.document.submitted",
-          detail: `${documentType} incorporado con biometria, coincidencia e integridad confirmadas.`
+          detail: `${documentType} incorporado con biometria, coincidencia e integridad confirmadas. Usuario e institucion referencial notificados.`
         }
       ]
     });
-    setStatus("#passportUploadStatus", `${documentType} incorporado a revision segura para ${next.athleteName}. Hash y auditoria registrados.`, true);
+    setStatus("#passportUploadStatus", `${documentType} incorporado a revision segura. Usuario e institucion referencial notificados para recepcion, observacion o validacion.`, true);
     return true;
   };
 

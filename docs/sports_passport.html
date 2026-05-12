@@ -73,8 +73,17 @@
           <input id="passportBirthDate" value="2012-05-12">
         </div>
         <div>
-          <label>Academia / escuela</label>
+          <label>Institucion que inicia</label>
           <input id="passportAcademy" value="Escuela deportiva piloto">
+        </div>
+        <div>
+          <label>Tipo de institucion iniciadora</label>
+          <select id="passportInstitutionType">
+            <option>Academia de futbol</option>
+            <option>Escuela deportiva</option>
+            <option>Club formativo</option>
+            <option>Club receptor</option>
+          </select>
         </div>
         <div>
           <label>Categoria</label>
@@ -93,10 +102,20 @@
           <input id="passportEmail" value="familia.demo@correo.local">
         </div>
         <div>
+          <label>Institucion referencial</label>
+          <input id="passportReferenceInstitution" value="Liga regional / federacion de referencia">
+        </div>
+        <div>
+          <label>Email institucion referencial</label>
+          <input id="passportReferenceEmail" value="referencia.demo@liga.local">
+        </div>
+        <div>
           <label>Canal de gestion</label>
           <select id="passportChannel">
-            <option>Academia valida y deriva a liga</option>
+            <option>Institucion inicia y comunica a liga</option>
             <option>Liga revisa y observa</option>
+            <option>Liga aprueba y comunica validacion</option>
+            <option>Club observa documentacion y solicita correccion</option>
             <option>Escribano certifica documentacion sensible</option>
           </select>
         </div>
@@ -107,6 +126,22 @@
         <a class="btn btn-secondary" href="sports_passport_document.html">Ver ficha documental</a>
       </div>
       <p class="muted" id="passportSaveStatus">Ficha en edicion. Al guardar se registra evento de alta y queda disponible para gestion documental.</p>
+    </div>
+
+    <div class="card">
+      <h2>Cierre comunicacional de cada iniciacion</h2>
+      <p>Toda alta, recepcion, observacion o validacion debe generar comunicacion al usuario y a la institucion referencial. Esto evita que el expediente quede informal o sin responsable operativo.</p>
+      <div class="grid three">
+        <div class="evidence-list">
+          <div><strong>Usuario / tutor:</strong> recibe estado, observaciones, pedidos de correccion y constancia de validacion.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Academia / escuela / club:</strong> conserva trazabilidad de la carga y de su responsabilidad inicial.</div>
+        </div>
+        <div class="evidence-list">
+          <div><strong>Institucion referencial:</strong> liga, federacion o autoridad vinculada recibe recepcion, observacion o aprobacion.</div>
+        </div>
+      </div>
     </div>
 
     <div id="documentos" class="grid two">
@@ -202,6 +237,7 @@
             <th>Responsable</th>
             <th>Estado</th>
             <th>Evidencia</th>
+            <th>Comunicacion</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -211,6 +247,7 @@
             <td>Academia</td>
             <td><span class="badge-ok">Validado</span></td>
             <td><span class="badge-ok">Hash + fecha</span></td>
+            <td>Usuario + institucion referencial</td>
             <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a></td>
           </tr>
           <tr>
@@ -218,6 +255,7 @@
             <td>Familia / tutor</td>
             <td><span class="badge-pending">Firma pendiente</span></td>
             <td><span class="badge-pending">Identidad + consentimiento</span></td>
+            <td>Usuario notificado</td>
             <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a></td>
           </tr>
           <tr>
@@ -225,6 +263,7 @@
             <td>Profesional / familia</td>
             <td><span class="badge-neutral">Requerido</span></td>
             <td><span class="badge-neutral">Pendiente</span></td>
+            <td>Pendiente de recepcion</td>
             <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver muestra</a></td>
           </tr>
         </tbody>
@@ -252,6 +291,10 @@
         <div>
           <strong>Academia</strong>
           <span>Controla documentacion inicial, observa faltantes y habilita participacion interna.</span>
+        </div>
+        <div>
+          <strong>Escuela / club</strong>
+          <span>Puede iniciar el expediente, adjuntar documentacion y recibir observaciones o validacion.</span>
         </div>
         <div>
           <strong>Liga regional</strong>
