@@ -841,6 +841,52 @@ textarea {
   margin-top: 6px;
 }
 
+.adoption-roadmap,
+.validation-levels {
+  display: grid;
+  gap: 12px;
+}
+
+.adoption-roadmap {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.adoption-roadmap div,
+.validation-levels div {
+  background: #f7fbfd;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--primary-2);
+  border-radius: 8px;
+  min-height: 124px;
+  padding: 16px;
+}
+
+.validation-levels div {
+  align-items: flex-start;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 90px 1fr;
+  min-height: auto;
+}
+
+.adoption-roadmap strong,
+.validation-levels strong,
+.adoption-roadmap span,
+.validation-levels span {
+  display: block;
+}
+
+.adoption-roadmap strong,
+.validation-levels strong {
+  color: var(--primary);
+}
+
+.adoption-roadmap span,
+.validation-levels span {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
 .language-switcher {
   align-items: center;
   background: rgba(255, 255, 255, 0.96);

@@ -15,12 +15,14 @@ https://angeladrianpagnini-star.github.io/cdn-demo-publica/
 ## Que muestra la demo
 
 - Portada institucional clickeable.
+- Pantalla de abordaje modular para adopcion: deporte formativo, contratos profesionales y certificaciones generales.
 - Panel de control de tramites notariales.
 - Alta de tramite digital.
 - Seleccion y validacion de escribano.
 - Simulacion de identidad, hash, firma, certificacion y paquete de evidencia.
 - Auditoria con cadena de custodia.
 - Vertical deportiva para contratos federados, agentes FIFA, clubes, jugadores, sponsors y validacion federativa.
+- Timeline forense y niveles de validacion escalables para paquetes comerciales e institucionales.
 - Dos caminos de trabajo contractual:
   - cargar documento ya confeccionado;
   - construir documento asistido desde la plataforma.
