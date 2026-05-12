@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa institucional deportiva</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">Certificacion Digital Notarial <span>Mesa<br>Institucional</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="strategy.html">Abordaje</a>
+    <a href="sports_passport.html">Pasaporte</a>
+    <a href="institution_workspace.html">Mesa institucional</a>
+    <a href="sports_contracts.html">Deportivo</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Recepcion institucional</h3>
+    <span class="step-pill active"><strong>1. Recepcion</strong>Peticiones entrantes</span>
+    <span class="step-pill"><strong>2. Revision</strong>Documentos y datos</span>
+    <span class="step-pill"><strong>3. Decision</strong>Observar o validar</span>
+    <span class="step-pill"><strong>4. Comunicacion</strong>Usuario e institucion</span>
+    <span class="step-pill"><strong>5. Base</strong>Consulta y estado</span>
+  </aside>
+
+  <section class="content">
+    <div class="access-gate" data-access-gate="institution">
+      <h2>Acceso seguro institucional</h2>
+      <p>Credencial demo: usuario <code>institucion.demo</code>, clave <code>demo123</code>. El acceso representa academia, escuela, club, liga o federacion segun rol asignado.</p>
+      <div class="form-grid">
+        <div>
+          <label>Usuario institucional</label>
+          <input data-auth-user value="institucion.demo">
+        </div>
+        <div>
+          <label>Clave</label>
+          <input data-auth-pass type="password" value="demo123" autocomplete="off">
+        </div>
+        <div>
+          <label>Rol operativo</label>
+          <select>
+            <option>Academia / escuela</option>
+            <option>Club formativo</option>
+            <option>Club receptor</option>
+            <option>Liga regional</option>
+            <option>Federacion</option>
+          </select>
+        </div>
+        <div class="biometric-panel">
+          <span class="fingerprint-demo" aria-hidden="true">
+            <svg viewBox="0 0 48 48" focusable="false">
+              <path d="M12 25c0-7.2 5.3-12.5 12-12.5S36 17.8 36 25" />
+              <path d="M17 25c0-4.4 3-7.5 7-7.5s7 3.1 7 7.5" />
+              <path d="M22 25c0-1.7.8-2.8 2-2.8s2 1.1 2 2.8c0 7-2.2 11.8-6.5 15" />
+              <path d="M31.5 27.5c-.1 5.9-1.9 11.1-5.2 15.4" />
+              <path d="M9.5 22.5c.9-8.2 7-14 14.5-14s13.6 5.8 14.5 14" />
+            </svg>
+          </span>
+          <label><input data-auth-biometric type="checkbox"> Validar biometria demo</label>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button type="button" data-auth-button>Ingresar a mesa institucional</button>
+      </div>
+    </div>
+
+    <div data-secure-area>
+      <div class="page-title">
+        <div>
+          <h1>Mesa institucional de recepcion y gestion</h1>
+          <p>Espacio para que academias, escuelas, clubes, ligas o federaciones reciban peticiones, revisen documentacion, observen, validen y consulten estados.</p>
+          <p><strong>Acceso:</strong> <span class="badge-ok" data-auth-stamp>Sesion no validada</span></p>
+        </div>
+        <a class="btn" href="sports_passport.html">Abrir pasaporte</a>
+      </div>
+
+      <div class="grid three">
+        <div class="card metric">
+          <strong>8</strong>
+          <span>Peticiones recibidas para control documental.</span>
+        </div>
+        <div class="card metric">
+          <strong>3</strong>
+          <span>Observaciones pendientes de respuesta del usuario.</span>
+        </div>
+        <div class="card metric">
+          <strong>5</strong>
+          <span>Validaciones comunicadas a usuario e institucion referencial.</span>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <div class="card">
+          <h2>Bandeja de peticiones</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Expediente</th>
+                <th>Deportista</th>
+                <th>Origen</th>
+                <th>Estado</th>
+                <th>Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PD-2026-0001</td>
+                <td>Jugador/a demo</td>
+                <td>Escuela deportiva piloto</td>
+                <td><span class="badge-pending">Apto medico requerido</span></td>
+                <td><a class="btn btn-secondary" href="sports_passport_document.html">Revisar</a></td>
+              </tr>
+              <tr>
+                <td>PD-2026-0002</td>
+                <td>Jugador juvenil</td>
+                <td>Club formativo</td>
+                <td><span class="badge-neutral">Recepcionado</span></td>
+                <td><a class="btn btn-secondary" href="sports_passport.html">Abrir</a></td>
+              </tr>
+              <tr>
+                <td>PD-2026-0003</td>
+                <td>Jugadora infantil</td>
+                <td>Academia barrial</td>
+                <td><span class="badge-ok">Validado</span></td>
+                <td><a class="btn btn-secondary" href="sports_passport_document.html">Ver</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>Decision institucional</h2>
+          <div class="evidence-list">
+            <div><strong>Recepcionar:</strong> confirma ingreso y comunica al usuario y a la institucion referencial.</div>
+            <div><strong>Observar:</strong> solicita correccion documental, marca motivo y conserva evidencia.</div>
+            <div><strong>Validar:</strong> aprueba el documento o expediente y emite constancia verificable.</div>
+            <div><strong>Derivar:</strong> remite a liga, federacion, club, escribano o area legal competente.</div>
+          </div>
+          <div class="toolbar">
+            <button type="button">Recepcionar demo</button>
+            <button type="button">Observar demo</button>
+            <button type="button">Validar demo</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Base de consultas y estados</h2>
+        <div class="form-grid">
+          <div>
+            <label>Buscar por expediente</label>
+            <input value="PD-2026-0001">
+          </div>
+          <div>
+            <label>Filtrar por estado</label>
+            <select>
+              <option>Todos</option>
+              <option>Recepcionado</option>
+              <option>Observado</option>
+              <option>Validado</option>
+              <option>Derivado</option>
+            </select>
+          </div>
+          <div>
+            <label>Institucion</label>
+            <select>
+              <option>Escuela deportiva piloto</option>
+              <option>Club formativo</option>
+              <option>Liga regional</option>
+              <option>Federacion</option>
+            </select>
+          </div>
+        </div>
+        <div class="status-board">
+          <div class="status-step complete"><span></span><strong>Recepcion</strong><small>Usuario e institucion notificados</small></div>
+          <div class="status-step pending"><span></span><strong>Observacion</strong><small>Falta apto medico vigente</small></div>
+          <div class="status-step pending"><span></span><strong>Validacion</strong><small>En espera de documentacion completa</small></div>
+          <div class="status-step pending"><span></span><strong>Archivo</strong><small>QR y evidencia al cierre</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Auditoria institucional</h2>
+        <ul class="timeline">
+          <li><strong>Peticion recibida</strong> Expediente PD-2026-0001 ingresado por Escuela deportiva piloto.</li>
+          <li><strong>Comunicacion emitida</strong> Usuario e institucion referencial recibieron constancia de recepcion.</li>
+          <li><strong>Observacion registrada</strong> Se solicita apto medico vigente con plazo de respuesta.</li>
+          <li><strong>Base actualizada</strong> Estado visible para usuario, academia, club y liga segun permisos.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

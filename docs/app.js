@@ -535,7 +535,12 @@
       const user = gate.querySelector("[data-auth-user]").value.trim();
       const pass = gate.querySelector("[data-auth-pass]").value.trim();
       const biometric = gate.querySelector("[data-auth-biometric]").checked;
-      const validUser = role === "regulator" ? "regulador.demo" : "escribano.demo";
+      const roleCredentials = {
+        regulator: "regulador.demo",
+        notary: "escribano.demo",
+        institution: "institucion.demo",
+      };
+      const validUser = roleCredentials[role] || "escribano.demo";
       if (!user || !pass || !biometric) {
         alert("Complete usuario, clave y validacion biometrica demo.");
         return;
