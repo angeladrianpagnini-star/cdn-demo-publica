@@ -888,13 +888,15 @@ textarea {
 }
 
 .passport-checklist,
-.passport-roles {
+.passport-roles,
+.passport-security-grid {
   display: grid;
   gap: 12px;
 }
 
 .passport-checklist label,
-.passport-roles div {
+.passport-roles div,
+.passport-security-grid label {
   background: #f7fbfd;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -907,8 +909,23 @@ textarea {
   transform: translateY(1px);
 }
 
+.passport-checklist a {
+  color: var(--primary);
+  font-weight: 700;
+  margin-left: 10px;
+}
+
 .passport-roles {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.passport-security-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin: 16px 0;
+}
+
+.passport-security-grid input {
+  margin-right: 10px;
 }
 
 .passport-roles strong,

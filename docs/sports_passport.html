@@ -25,7 +25,8 @@
   <aside class="sidebar">
     <h3>Pasaporte deportivo</h3>
     <a href="#alta">Alta del deportista</a>
-    <a href="#documentos">Documentos requeridos</a>
+    <a href="#documentos">Gestion documental</a>
+    <a href="#carga">Carga segura</a>
     <a href="#repositorio">Repositorio</a>
     <a href="#canal">Canal de gestion</a>
     <a href="#trazabilidad">Trazabilidad</a>
@@ -102,21 +103,22 @@
       </div>
       <div class="toolbar">
         <button type="button">Guardar ficha demo</button>
-        <a class="btn btn-secondary" href="#documentos">Ver documentos</a>
-        <a class="btn btn-secondary" href="sports_passport_document.html">Ver documento</a>
+        <a class="btn btn-secondary" href="#documentos">Gestionar documentos</a>
+        <a class="btn btn-secondary" href="sports_passport_document.html">Ver ficha documental</a>
       </div>
     </div>
 
     <div id="documentos" class="grid two">
       <div class="card">
-        <h2>Documentos requeridos</h2>
+        <h2>Gestion documental requerida</h2>
+        <p>Desde este espacio se visualizan documentos, se detectan faltantes y se habilita carga segura cuando el tutor, academia, club o liga deben aportar nueva evidencia.</p>
         <div class="passport-checklist">
           <label><input type="checkbox" checked> Ficha de inscripcion deportiva <a href="sports_passport_document.html">Ver</a></label>
           <label><input type="checkbox" checked> Autorizacion de madre, padre o tutor <a href="sports_passport_document.html">Ver</a></label>
-          <label><input type="checkbox"> Apto medico vigente <a href="sports_passport_document.html">Ver muestra</a></label>
-          <label><input type="checkbox"> Cobertura de seguro / obra social <a href="sports_passport_document.html">Ver muestra</a></label>
-          <label><input type="checkbox"> Consentimiento para viajes o torneos <a href="sports_passport_document.html">Ver muestra</a></label>
-          <label><input type="checkbox"> Declaracion de responsabilidad civil <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Apto medico vigente <a href="#carga">Cargar</a> <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Cobertura de seguro / obra social <a href="#carga">Cargar</a> <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Consentimiento para viajes o torneos <a href="#carga">Cargar</a> <a href="sports_passport_document.html">Ver muestra</a></label>
+          <label><input type="checkbox"> Declaracion de responsabilidad civil <a href="#carga">Cargar</a> <a href="sports_passport_document.html">Ver muestra</a></label>
           <label><input type="checkbox"> Registro de sanciones u observaciones <a href="sports_passport_document.html">Ver muestra</a></label>
         </div>
       </div>
@@ -130,6 +132,61 @@
           <div><strong>Nivel 4</strong><span>Liga regional confirma habilitacion deportiva.</span></div>
           <div><strong>Nivel 5</strong><span>Certificacion reforzada para casos sensibles.</span></div>
         </div>
+      </div>
+    </div>
+
+    <div id="carga" class="card">
+      <h2>Carga segura de documento</h2>
+      <p>Ejemplo de carga para ficha medica, autorizacion, seguro o documento emitido por club/liga. La accion queda bloqueada hasta validar identidad del operador y coincidencia con la persona mencionada en el documento.</p>
+      <div class="form-grid">
+        <div>
+          <label>Tipo de documento a incorporar</label>
+          <select>
+            <option>Ficha medica / apto fisico</option>
+            <option>Autorizacion de tutor</option>
+            <option>Seguro / cobertura</option>
+            <option>Documento emitido por club</option>
+            <option>Documento emitido por liga</option>
+          </select>
+        </div>
+        <div>
+          <label>Responsable que carga</label>
+          <select>
+            <option>Tutor del deportista</option>
+            <option>Academia / escuela</option>
+            <option>Club receptor</option>
+            <option>Liga regional</option>
+            <option>Escribano / certificador</option>
+          </select>
+        </div>
+        <div>
+          <label>Identidad declarada del operador</label>
+          <input value="Madre / Padre / Tutor - DNI 11.111.111">
+        </div>
+        <div>
+          <label>Persona mencionada en el documento</label>
+          <input value="Jugador/a demo - DNI 00.000.000">
+        </div>
+        <div>
+          <label>Archivo</label>
+          <input type="file">
+        </div>
+        <div>
+          <label>Correo para notificacion de estado</label>
+          <input value="familia.demo@correo.local">
+        </div>
+      </div>
+
+      <div class="passport-security-grid">
+        <label><input type="checkbox"> Confirmar biometria demo del operador</label>
+        <label><input type="checkbox"> Validar coincidencia documento-persona</label>
+        <label><input type="checkbox"> Aceptar tratamiento de dato sensible</label>
+        <label><input type="checkbox"> Registrar hash y evento de auditoria</label>
+      </div>
+
+      <div class="toolbar">
+        <button type="button">Incorporar a revision demo</button>
+        <a class="btn btn-secondary" href="sports_passport_document.html">Ver visor seguro</a>
       </div>
     </div>
 
