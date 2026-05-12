@@ -32,15 +32,15 @@ body {
 
 header {
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94)),
+    linear-gradient(90deg, #ffffff, #f8fafc),
     radial-gradient(circle at 18% 50%, rgba(148, 163, 184, 0.18), transparent 32%);
   border-bottom: 1px solid var(--line);
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(500px, 560px) minmax(0, 1fr);
   align-items: center;
-  gap: 28px;
-  min-height: 102px;
-  padding: 18px 32px;
+  gap: 20px;
+  min-height: 98px;
+  padding: 16px 32px;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -55,8 +55,9 @@ header {
   gap: 14px;
   letter-spacing: 0;
   line-height: 1.05;
-  min-width: 520px;
+  min-width: 0;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+  width: 100%;
 }
 
 .brand::before {
@@ -102,7 +103,7 @@ header {
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   justify-content: flex-end;
 }
 
@@ -120,8 +121,8 @@ nav a {
   border: 1px solid var(--line);
   color: var(--primary);
   font-weight: 650;
-  min-height: 38px;
-  padding: 9px 12px;
+  min-height: 36px;
+  padding: 8px 10px;
   white-space: nowrap;
 }
 
