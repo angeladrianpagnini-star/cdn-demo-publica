@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificador FederalTrust</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">FederalTrust <span>Digital Certification<br>&amp; Legal Traceability</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="strategy.html">Abordaje</a>
+    <a href="sports_passport.html">Pasaporte</a>
+    <a href="sports_contracts.html">Sports</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="sports_clause_builder.html">Constructor</a>
+    <a href="evidence_vault.html">Vault</a>
+    <a href="verifier.html">Verificador</a>
+    <a href="institution_workspace.html">Instituciones</a>
+    <a href="regulator.html">Regulador</a>
+    <a href="notary_workspace.html">Escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Verificador</h3>
+    <span class="step-pill active"><strong>1. QR / codigo</strong>Consulta externa</span>
+    <span class="step-pill"><strong>2. Estado</strong>Vigencia y hash</span>
+    <span class="step-pill"><strong>3. Evidencia</strong>Paquete auditado</span>
+    <span class="step-pill"><strong>4. Constancia</strong>Validacion exportable</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>Verificador QR de documentos</h1>
+        <p>Perfil para bancos, tribunales, clubes, sponsors, empresas, federaciones u organismos que necesitan comprobar autenticidad, vigencia y trazabilidad sin modificar el expediente.</p>
+      </div>
+      <a class="btn" href="evidence_vault.html">Ver Vault</a>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Consulta de verificacion</h2>
+        <div class="form-grid">
+          <label>
+            Rol del verificador
+            <select>
+              <option>Federacion / liga</option>
+              <option>Club deportivo</option>
+              <option>Tribunal / autoridad competente</option>
+              <option>Banco / entidad financiera</option>
+              <option>Sponsor / empresa contratante</option>
+            </select>
+          </label>
+          <label>
+            Codigo o QR
+            <input value="FT-DEP-2026-0001-QR">
+          </label>
+          <label>
+            Motivo de consulta
+            <select>
+              <option>Validar documento presentado</option>
+              <option>Control federativo previo</option>
+              <option>Auditoria contractual</option>
+              <option>Control judicial / administrativo</option>
+            </select>
+          </label>
+          <label>
+            Email de constancia
+            <input value="verificador@institucion.demo">
+          </label>
+        </div>
+        <div class="toolbar">
+          <a class="btn" href="#resultado">Validar demo</a>
+          <a class="btn btn-secondary" href="certificate.html">Ver certificado</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Lectura QR</h2>
+        <div class="certificate-header">
+          <div>
+            <p><strong>Expediente:</strong> CDN-DEP-2026-0001</p>
+            <p><strong>Tipo:</strong> contrato deportivo federado</p>
+            <p><strong>Estado:</strong> <span class="badge-ok">Verificable</span></p>
+            <p><strong>Alcance:</strong> consulta de autenticidad, integridad y vigencia</p>
+          </div>
+          <div class="certificate-qr">QR<br>FederalTrust</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="resultado">
+      <h2>Resultado de validacion</h2>
+      <div class="status-board">
+        <div class="status-step complete"><span></span><strong>Documento autentico</strong><small>Hash coincide con el paquete conservado.</small></div>
+        <div class="status-step complete"><span></span><strong>Identidades verificadas</strong><small>Partes autenticadas con evidencia documental y biometrica.</small></div>
+        <div class="status-step complete"><span></span><strong>Intervencion institucional</strong><small>Federacion / liga registra recepcion y estado.</small></div>
+        <div class="status-step complete"><span></span><strong>Certificacion notarial</strong><small>Actuacion firmada y trazable.</small></div>
+        <div class="status-step pending"><span></span><strong>Consulta registrada</strong><small>Evento de verificacion agregado a auditoria sin exponer datos sensibles.</small></div>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Datos visibles para terceros</h2>
+        <div class="evidence-list">
+          <div><strong>Estado:</strong> vigente, observado, revocado o vencido.</div>
+          <div><strong>Hash:</strong> coincidencia del documento presentado contra el original custodiado.</div>
+          <div><strong>Certificacion:</strong> fecha, sello temporal, escribano actuante y organismo validador.</div>
+          <div><strong>Auditoria:</strong> constancia de consulta, rol del verificador y motivo declarado.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Datos protegidos</h2>
+        <div class="evidence-list">
+          <div><strong>Confidencialidad:</strong> el verificador no descarga evidencia sensible sin permiso.</div>
+          <div><strong>Minimizacion:</strong> solo se muestran datos necesarios para acreditar autenticidad.</div>
+          <div><strong>Acceso reforzado:</strong> consultas sensibles pueden exigir credencial institucional o doble factor.</div>
+          <div><strong>Registro:</strong> toda consulta queda asociada al expediente como evento de trazabilidad.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

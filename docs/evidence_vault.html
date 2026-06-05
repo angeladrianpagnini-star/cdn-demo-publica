@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FederalTrust Vault</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="brand">FederalTrust <span>Digital Certification<br>&amp; Legal Traceability</span></div>
+  <nav>
+    <a href="dashboard.html">Panel</a>
+    <a href="strategy.html">Abordaje</a>
+    <a href="sports_passport.html">Pasaporte</a>
+    <a href="sports_contracts.html">Sports</a>
+    <a href="sports_repository.html">Contratos</a>
+    <a href="sports_clause_builder.html">Constructor</a>
+    <a href="evidence_vault.html">Vault</a>
+    <a href="verifier.html">Verificador</a>
+    <a href="institution_workspace.html">Instituciones</a>
+    <a href="regulator.html">Regulador</a>
+    <a href="notary_workspace.html">Escribano</a>
+    <a href="audit_trail.html">Auditoria</a>
+  </nav>
+</header>
+
+<div class="main">
+  <aside class="sidebar">
+    <h3>Evidence Vault</h3>
+    <span class="step-pill active"><strong>Boveda</strong>Paquete probatorio</span>
+    <span class="step-pill"><strong>Custodia</strong>Cifrado y retencion</span>
+    <span class="step-pill"><strong>Accesos</strong>Roles y permisos</span>
+    <span class="step-pill"><strong>Verificacion</strong>QR y constancias</span>
+  </aside>
+
+  <section class="content">
+    <div class="page-title">
+      <div>
+        <h1>FederalTrust Vault</h1>
+        <p>Boveda documental para conservar documento, identidad, consentimiento, biometria, firmas, hash, QR, sello temporal, auditoria y constancias institucionales como un paquete de evidencia legal verificable.</p>
+      </div>
+      <a class="btn" href="verifier.html">Validar por QR</a>
+    </div>
+
+    <div class="grid three">
+      <div class="card metric">
+        <strong>9</strong>
+        <span>Capas de evidencia: documento, identidad, biometria, video/acta, firmas, hash, QR, auditoria y custodia.</span>
+      </div>
+      <div class="card metric">
+        <strong>256</strong>
+        <span>Cifrado en reposo y transporte seguro para evidencia sensible.</span>
+      </div>
+      <div class="card metric">
+        <strong>RFC</strong>
+        <span>Sello temporal y registro de integridad verificable en el tiempo.</span>
+      </div>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h2>Paquete de evidencia</h2>
+        <div class="evidence-list">
+          <div><strong>Documento original:</strong> archivo recibido, hash inicial, metadatos de carga y origen.</div>
+          <div><strong>Documento construido:</strong> version generada por contratos guiados, clausulas y aprobaciones.</div>
+          <div><strong>Documento firmado:</strong> firmas de partes, escribano, institucion o federacion segun corresponda.</div>
+          <div><strong>Identidad:</strong> DNI, validacion documental, biometria demo y constancia de sesion.</div>
+          <div><strong>Consentimiento:</strong> aceptacion informada, video/acta, IP, fecha y operador.</div>
+          <div><strong>Hash + QR:</strong> identificador publico de verificacion sin exponer evidencia sensible.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Reglas de custodia</h2>
+        <div class="evidence-list">
+          <div><strong>Confidencialidad:</strong> datos sensibles cifrados y accesos limitados por rol.</div>
+          <div><strong>Integridad:</strong> cada version conserva hash y evento de auditoria.</div>
+          <div><strong>Disponibilidad:</strong> backup cifrado, restauracion probada y politica de continuidad.</div>
+          <div><strong>Conservacion:</strong> retencion documental, migracion controlada y verificacion futura.</div>
+          <div><strong>Trazabilidad:</strong> quien accedio, que vio, que descargo y con que autorizacion.</div>
+          <div><strong>Minimizacion:</strong> el verificador externo solo ve estado, hash y constancia necesaria.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Repositorio de expedientes</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Expediente</th>
+              <th>Vertical</th>
+              <th>Paquete</th>
+              <th>Estado</th>
+              <th>Verificacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FT-SPO-2026-0001</td>
+              <td>FederalTrust Sports</td>
+              <td>Contrato federado + identidad + certificacion</td>
+              <td><span class="badge-ok">Custodiado</span></td>
+              <td><a class="btn btn-secondary" href="verifier.html">Validar QR</a></td>
+            </tr>
+            <tr>
+              <td>FT-NOT-2026-0134</td>
+              <td>FederalTrust Notarial</td>
+              <td>Poder / certificacion + hash + sello temporal</td>
+              <td><span class="badge-pending">En certificacion</span></td>
+              <td><a class="btn btn-secondary" href="audit_trail.html">Ver auditoria</a></td>
+            </tr>
+            <tr>
+              <td>FT-GEN-2026-0021</td>
+              <td>Certificacion general</td>
+              <td>NDA + partes + evidencia de consentimiento</td>
+              <td><span class="badge-ok">Verificable</span></td>
+              <td><a class="btn btn-secondary" href="certificate.html">Ver certificado</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Cadena de custodia del Vault</h2>
+      <ul class="timeline">
+        <li><strong>Documento creado o cargado</strong> se registra hash inicial y metadatos de origen.</li>
+        <li><strong>Identidad validada</strong> se vincula evidencia documental, biometrica y consentimiento.</li>
+        <li><strong>Contrato construido</strong> se guardan versiones, clausulas y aprobaciones intermedias.</li>
+        <li><strong>Firma y certificacion</strong> se agregan firmas, sello temporal y actuacion notarial/institucional.</li>
+        <li><strong>Vault cerrado</strong> se emite QR, certificado de verificacion y politica de conservacion.</li>
+        <li><strong>Verificacion posterior</strong> cada consulta externa queda registrada sin alterar el paquete original.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</body>
+</html>
+

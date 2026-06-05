@@ -1,6 +1,6 @@
-# Certificacion Digital Notarial - Demo publica
+# FederalTrust - Demo publica
 
-Demo conceptual de una plataforma de certificacion digital notarial orientada a documentos legales, cadena de custodia y contratos deportivos federados.
+Demo conceptual de FederalTrust, una plataforma de certificacion digital, evidencia legal y trazabilidad verificable orientada a documentos legales, cadena de custodia, contratos deportivos federados y repositorios probatorios.
 
 El objetivo de esta version publica es mostrar el alcance visual y funcional del piloto sin exponer documentacion estrategica interna, roadmap de producto, analisis de proteccion intelectual ni materiales sensibles de validacion institucional.
 
@@ -15,20 +15,38 @@ https://angeladrianpagnini-star.github.io/cdn-demo-publica/
 ## Que muestra la demo
 
 - Portada institucional clickeable.
+- Arquitectura de marca: FederalTrust Platform, FederalTrust Notarial y FederalTrust Sports.
 - Pantalla de abordaje modular para adopcion: deporte formativo, contratos profesionales y certificaciones generales.
+- FederalTrust Vault / Evidence Repository para documento original, documento firmado, identidad, biometria, consentimiento, hash, QR, sello temporal, auditoria y custodia.
+- Verificador QR para bancos, clubes, federaciones, tribunales, empresas o terceros autorizados.
 - Modulo propio de pasaporte documental deportivo para academias, escuelas y ligas de base.
 - Visor de documentos del pasaporte con hash, QR, control de acceso, paquete de evidencia y timeline forense.
 - Mesa institucional para recepcion, observacion, validacion, comunicacion y consulta de estados de peticiones.
 - Panel de control de tramites notariales.
 - Alta de tramite digital.
 - Seleccion y validacion de escribano.
-- Simulacion de identidad, hash, firma, certificacion y paquete de evidencia.
+- Simulacion de identidad, biometria, hash, firma, certificacion y paquete de evidencia.
 - Auditoria con cadena de custodia.
 - Vertical deportiva para contratos federados, agentes FIFA, clubes, jugadores, sponsors y validacion federativa.
 - Timeline forense y niveles de validacion escalables para paquetes comerciales e institucionales.
 - Dos caminos de trabajo contractual:
   - cargar documento ya confeccionado;
   - construir documento asistido desde la plataforma.
+
+## Diferencial
+
+FederalTrust no se limita a firmar documentos. Construye y conserva un paquete de evidencia legal verificable:
+
+- documento;
+- identidad;
+- biometria;
+- consentimiento;
+- hash;
+- QR;
+- auditoria;
+- sello temporal;
+- cadena de custodia;
+- verificaciones posteriores.
 
 ## Ejecutar localmente
 
